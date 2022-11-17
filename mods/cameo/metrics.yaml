@@ -218,6 +218,9 @@ Metrics:
     #WARCRAFT 1
 	FactionSuffix-human: human
 	FactionSuffix-orc: orc
+		#WARCRAFT 2
+	FactionSuffix-human2: human
+	FactionSuffix-orc2: orc
     #WARZONE 2100
 	FactionSuffix-alpha: 2100
 	FactionSuffix-scavenger: 2100

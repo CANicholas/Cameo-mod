@@ -48,7 +48,7 @@ games:
 		Star Wars: 160, 16, 32, 16
 		State of War: 0, 208, 32, 16
 		Warcraft: 160, 96, 32, 16
-		Warcraft2: 160, 319, 32, 16
+		Warcraft 2: 160, 335, 32, 16
 		Dune Universe: 192, 48, 32, 16
         Dune 2000: 192, 48, 32, 16
 		Dune 2: 192, 304, 32, 16
@@ -132,6 +132,7 @@ flags:
         RandomAWDor: 128, 160, 32, 16
         RandomDR: 160, 144, 32, 16
         RandomWC: 160, 96, 32, 16
+		RandomWC2: 160, 335, 32, 16
         RandomWZ: 0, 112, 32, 16
         RandomGSW: 32, 32, 32, 16
         RandomCity: 0, 192, 32, 16
@@ -191,8 +192,8 @@ flags:
         camea: 0, 224, 32, 16
         human: 160, 112, 32, 16
         orc: 160, 96, 32, 16
-		human2: 160, 319, 32, 16
-        orc2: 160, 335, 32, 16
+		human2: 160, 335, 32, 16
+        orc2: 160, 319, 32, 16
         human3: 64, 96, 32, 16
         orc3: 64, 96, 32, 16
         undead3: 64, 96, 32, 16
