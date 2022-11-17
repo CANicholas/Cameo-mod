@@ -46,6 +46,7 @@ Packages:
 	~cameo|bits/sow
 	~cameo|bits/worms
 	~cameo|bits/warcraft1
+	~cameo|bits/warcraft2
 	~cameo|bits/warcraft3
 	~cameo|bits/shockwave
 	~cameo|bits/sc2k
@@ -147,6 +148,7 @@ Rules:
 	cameo|rules/n64.yaml
 	cameo|rules/tiberiansun.yaml
 	cameo|rules/warcraft1.yaml
+	cameo|rules/warcraft2.yaml
 	cameo|rules/warcraft3.yaml
 	cameo|rules/wz2100.yaml
 	cameo|rules/worms.yaml
@@ -196,6 +198,7 @@ Sequences:
 	cameo|sequences/sow.yaml
 	cameo|sequences/worms.yaml
 	cameo|sequences/warcraft1.yaml
+	cameo|sequences/warcraft2.yaml
 	cameo|sequences/warcraft3.yaml
 	cameo|sequences/redalert.yaml
 	cameo|sequences/redalert2.yaml
@@ -274,6 +277,7 @@ Weapons:
 	#cameo|weapons/xmas.yaml
 	cameo|weapons/tomorrow.yaml
 	#cameo|weapons/valentine.yaml
+	cameo|weapons/warcraft2.yaml
 	cameo|weapons/warcraft3.yaml
 	cameo|weapons/halloween.yaml
 	cameo|weapons/tiberiandawn.yaml
@@ -353,7 +357,7 @@ Voices:
 	cameo|audio/wh40k.yaml
 	cameo|audio/warcraft1.yaml
 	cameo|audio/casino.yaml
-	#cameo|audio/warcraft2.yaml
+	cameo|audio/warcraft2.yaml
 	cameo|audio/warcraft3.yaml
 	cameo|audio/d2k.yaml
 	cameo|audio/dune2.yaml
