@@ -55,12 +55,12 @@ wc2voicehumanfootman:
 		Poisoned: hdead
 
 wc2voicehumanelvenarcher:
-    DefaultVariant: .wav  
+    DefaultVariant: .aud
 	Voices:
 		Select: ewhat1,ewhat2,ewhat3,ewhat4,epissed1,epissed2,epissed3
-		Attack: eyessir1,eyessir2,eyessir3,eyessir4
-		Action: eyessir1,eyessir2,eyessir3,eyessir4
-		Move: eyessir1,eyessir2,eyessir3,eyessir4
+		Attack: elyessir1,eyessir2,eyessir3,eyessir4
+		Action: elyessir1,eyessir2,eyessir3,eyessir4
+		Move: elyessir1,eyessir2,eyessir3,eyessir4
 		Die: hdead
 		Build: eready
 		Burned: hdead
@@ -68,7 +68,7 @@ wc2voicehumanelvenarcher:
 		Poisoned: hdead
 
 wc2voicehumanknight:
-    DefaultVariant: .wav  
+    DefaultVariant: .aud
 	Voices:
 		Select: knwhat1,knwhat2,knwhat3,knwhat4,knpissd1,knpissd2,knpissd3
 		Attack: knyessr1,knyessr2,knyessr3,knyessr4
@@ -81,7 +81,7 @@ wc2voicehumanknight:
 		Poisoned: hdead
 
 wc2voicehumanpaladin:
-    DefaultVariant: .wav 
+    DefaultVariant: .aud
 	Voices:
 		Select: pkwhat1,pkwhat2,pkwhat3,pkwhat4,pkpissd1,pkpissd2,pkpissd3
 		Attack: pkyessr1,pkyessr2,pkyessr3,pkyessr4
@@ -202,8 +202,8 @@ wc2voiceorcogre:
 		Zapped: odead
 		Poisoned: odead
 
-wc2voiceorcogre:
-    DefaultVariant: .aud  
+wc2voiceorcogremage:
+    DefaultVariant: .aud
 	Voices:
 		Select: omwhat1,omwhat2,omwhat3,omwhat4,ompissd1,ompissd2,ompissd3
 		Attack: omyessr1,omyessr2,omyessr3
@@ -235,11 +235,11 @@ wc2voiceorcgoblinsappers:
 		Attack: goyessr1,goyessr2,goyessr3,goyessr4
 		Action: goyessr1,goyessr2,goyessr3,goyessr4
 		Move: goyessr1,goyessr2,goyessr3,goyessr4
-		Die: hdead
+		Die: odead
 		Build: goready
-		Burned: hdead
-		Zapped: hdead
-		Poisoned: hdead
+		Burned: odead
+		Zapped: odead
+		Poisoned: odead
 
 wc2voiceorcdeathknight:
     DefaultVariant: .aud  
@@ -355,7 +355,7 @@ wc2orcaltarofstorms:
 		Select: ochant
 		
 wc2orcgoblinalchemist:
-    DefaultVariant: .wav
+    DefaultVariant: .aud
 	Voices:
 		Select: alchemst
 

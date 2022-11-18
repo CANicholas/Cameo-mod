@@ -610,7 +610,7 @@ wc2_human_footman:
 wc2_human_elven_archer:
 	Inherits: ^WCInfantry
 	stand:
-		Start: 0	
+		Start: 0
 		Facings: -8
 	idle:
 		Start: 0
@@ -635,6 +635,36 @@ wc2_human_elven_archer:
 		Tick: 80
 	icon: wc2_cameos_human_units.png
 		Start: 2
+		AddExtension: False
+
+wc2_human_elven_ranger:
+	Inherits: ^WCInfantry
+	stand:
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
+		Facings: -8
+	run: 
+		Start: 8
+		Length: 4
+		Facings: -8
+		Tick: 100
+	shoot:
+		Start: 40
+		Length: 2
+		Facings: -8
+		Tick: 100
+	die: 
+		Start: 56
+		Length: 3
+		Tick: 80
+	die-crushed:
+		Start: 56
+		Length: 3
+		Tick: 80
+	icon: wc2_cameos_human_units.png
+		Start: 3
 		AddExtension: False
 
 wc2_human_knight:
@@ -1418,6 +1448,36 @@ wc2_orc_troll_axethrower:
 		Start: 2
 		AddExtension: False
 
+wc2_orc_troll_berserker:
+	Inherits: ^WCInfantry
+	stand: 
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
+		Facings: -8
+	run: 
+		Start: 8
+		Length: 5
+		Facings: -8
+		Tick: 100
+	shoot:
+		Start: 48
+		Length: 5
+		Facings: -8
+		Tick: 100
+	die: 
+		Start: 88
+		Length: 2
+		Tick: 80
+	die-crushed:
+		Start: 88
+		Length: 2
+		Tick: 80
+	icon: wc2_cameos_orc_units.png
+		Start: 3
+		AddExtension: False
+
 wc2_orc_ogre:
 	Inherits: ^WCInfantry
 	stand: 
@@ -1448,7 +1508,7 @@ wc2_orc_ogre:
 		Start: 4
 		AddExtension: False
 
-wc2_orc_ogremagi:
+wc2_orc_ogremage:
 	Inherits: ^WCInfantry
 	stand: 
 		Start: 0
@@ -1475,7 +1535,7 @@ wc2_orc_ogremagi:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-		Start: 4
+		Start: 5
 		AddExtension: False
 
 wc2_orc_catapult:

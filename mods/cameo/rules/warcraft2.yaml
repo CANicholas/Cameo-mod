@@ -545,7 +545,7 @@ Player:
 		Condition: rangersc_upg
 		Prerequisites: wc2_h_ranger_scouting
 	RevealsShroudMultiplier@RScoutUpg:
-		Modifier: 125
+		Modifier: 150
 		RequiresCondition: rangersc_upg
 
 ^wc2_h_ranger_marksman:
@@ -676,19 +676,19 @@ Player:
 		Condition: berserkersc_upg
 		Prerequisites: wc2_o_berserker_scouting
 	RevealsShroudMultiplier@BScoutUpg:
-		Modifier: 125
+		Modifier: 150
 		RequiresCondition: berserkersc_upg
 
 ^wc2_o_berserker_regen:
 	GrantConditionOnPrerequisite@BRegenUpg:
 		Condition: berserkerregen_upg
 		Prerequisites: wc2_o_berserker_regen
-	SelfHealing@BRegenUpg:
+	ChangesHealth@BRegenUpg:
 		PercentageStep: 5
-		Delay: 50
-		HealIfBelow: 100
-		DamageCooldown: 125
-		RequiresCondition: berserkeregen_upg
+		Delay: 10
+		StartIfBelow: 100
+		DamageCooldown: 150
+		RequiresCondition: berserkerregen_upg
 
 ####################################################################################################
 #		BUILDING human2
@@ -1337,7 +1337,7 @@ WC2_HUMAN_STABLES:
 	ProductionBar@NORMAL:
 		ProductionType: stablesupg.human2   
 		RequiresCondition: !classicproductionqueues
- 	ProductionBar@CLASSICPRODUCTIONQUEUES:
+	ProductionBar@CLASSICPRODUCTIONQUEUES:
 		ProductionType: RAstablesupg.human2  
 		RequiresCondition: classicproductionqueues	   
 	ProvidesPrerequisite:
@@ -1984,9 +1984,59 @@ WC2_HUMAN_ELVEN_ARCHER:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 20
-		Prerequisites: wc2_human_elven_lumber_mill
+		Prerequisites: wc2_human_elven_lumber_mill, ~!wc2_h_rangerupg
 		Queue: Infantry.human2, RAInfantry.human2
 		Description: Basic ranged infantry. Not as durable as Footman.\nCan attack air.
+		BuildDuration: 120
+		BuildDurationModifier: 100
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 10800
+	Armor:
+		Type: None
+	#Food
+	Power:
+		Amount: -5
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Weapon: wc2arrowFire
+		FireDelay: 7
+	Armament@aa:
+		Weapon: wc2arrowFireAA
+		FireDelay: 7
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences:
+	Crushable:
+	Voiced:
+		VoiceSet: wc2voicehumanelvenarcher
+	RenderSprites:
+		Scale: 0.6
+
+WC2_HUMAN_ELVEN_RANGER:
+	Inherits: ^WC2Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@HShieldUpg: ^wc2_h_str_shield
+	Inherits@ArrowUpg: ^wc2_h_str_arrow
+	Inherits@RLongBowUpg: ^wc2_h_ranger_longbow
+	Inherits@RScoutUpg: ^wc2_h_ranger_scouting
+	Inherits@RMarksmanUpg: ^wc2_h_ranger_marksman
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Elven Ranger
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: wc2_human_elven_lumber_mill, ~wc2_h_rangerupg
+		Queue: Infantry.human2, RAInfantry.human2
+		Description: Elite ranged infantry. Not as durable as Footman.\nCan attack air.
 		BuildDuration: 120
 		BuildDurationModifier: 100
 	Mobile:
@@ -2023,7 +2073,6 @@ WC2_HUMAN_KNIGHT:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@SwordUpg: ^wc2_h_str_sword
 	Inherits@HShieldUpg: ^wc2_h_str_shield
-	Inherits@PalUpg: ^wc2_h_paladinupg
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -2032,7 +2081,7 @@ WC2_HUMAN_KNIGHT:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: wc2_human_stables
+		Prerequisites: wc2_human_stables, ~!wc2_h_paladinupg
 		Queue: Infantry.human2, RAInfantry.human2
 		Description: Mounted infantry. Fast and durable.
 		BuildDuration: 300
@@ -2062,7 +2111,7 @@ WC2_HUMAN_KNIGHT:
 	RenderSprites:
 		Scale: 0.6
 
-WC2_HUMAN_KNIGHT:
+WC2_HUMAN_PALADIN:
 	Inherits: ^WC2Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -2072,14 +2121,14 @@ WC2_HUMAN_KNIGHT:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Knight
+		Name: Paladin
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: wc2_human_stables
+		Prerequisites: ~wc2_h_paladinupg, wc2_human_church, wc2_human_stables
 		Queue: Infantry.human2, RAInfantry.human2
-		Description: Mounted infantry. Fast and durable.
+		Description: Mounted holy infantry. Fast and durable.\nCan cast healing magicks.
 		BuildDuration: 300
 		BuildDurationModifier: 100
 	Mobile:
@@ -2103,7 +2152,7 @@ WC2_HUMAN_KNIGHT:
 		IdleSequences:
 	Crushable:
 	Voiced:
-		VoiceSet: wc2voicehumanknight
+		VoiceSet: wc2voicehumanpaladin
 	RenderSprites:
 		Scale: 0.6
 
@@ -2668,6 +2717,8 @@ WC2_HUMAN_GNOMISH_FLYING_MACHINE:
 		Amount: -30
 	Voiced:
 		VoiceSet: wc2voicehumanflyingmachine
+	RenderSprites:
+		Scale: 0.6
 
 WC2_HUMAN_GRYPHON_RIDER:
 	Inherits: ^Helicopter
@@ -2726,6 +2777,8 @@ WC2_HUMAN_GRYPHON_RIDER:
 		Amount: -30
 	Voiced:
 		VoiceSet: wc2voicehumangryphonrider
+	RenderSprites:
+		Scale: 0.6
 
 ####################################################################################################
 #		BUILDING orc2
@@ -3254,7 +3307,7 @@ WC2_ORC_ALTAR_OF_STORMS:
 		ProductionType: RAaltarupg.orc2
 		RequiresCondition: classicproductionqueues
 	Buildable:
-		BuildPaletteOrder: 14
+		BuildPaletteOrder: 17
 		Prerequisites: wc2_orc_ogre_mound ## once stronghold/fortress are fixed, prereq will be wc2_orc_fortress
 		Queue: Building.orc2, RABuilding.orc2
 		BuildDuration: 400
@@ -3386,9 +3439,29 @@ WC2_ORC_TROLL_AXETHROWER:
 	Tooltip:
 		Name: Troll Axethrower
 	Buildable:
-		Prerequisites: wc2_orc_troll_lumber_mill
+		Prerequisites: wc2_orc_troll_lumber_mill, ~!wc2_o_berserkerupg
 		Queue: Infantry.orc2, RAInfantry.orc2
 		Description: Basic ranged infantry.\nNot as durable as Grunt.\nCan attack air.
+	Armament:
+		Weapon: wc2axeFire
+	Armament@aa:
+		Weapon: wc2axeFireAA
+	Voiced:
+		VoiceSet: wc2voiceorctrollaxethrower
+	RenderSprites:
+		Scale: 0.6
+
+WC2_ORC_TROLL_BERSERKER:
+	Inherits@WC2_ORC_TROLL_AXETHROWER: WC2_ORC_TROLL_AXETHROWER
+	Inherits@BLighterUpg: ^wc2_o_berserker_lighteraxes
+	Inherits@BScoutUpg: ^wc2_o_berserker_scouting
+	Inherits@BRegenUpg: ^wc2_o_berserker_regen
+	Tooltip:
+		Name: Troll Berserker
+	Buildable:
+		Prerequisites: wc2_orc_troll_lumber_mill, ~wc2_o_berserkerupg
+		Queue: Infantry.orc2, RAInfantry.orc2
+		Description: Elite ranged infantry.\nNot as durable as Grunt.\nCan attack air.
 	Armament:
 		Weapon: wc2axeFire
 	Armament@aa:
@@ -3409,7 +3482,7 @@ WC2_ORC_OGRE:
 		AddToArmyValue: true
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: wc2_orc_ogre_mound
+		Prerequisites: wc2_orc_ogre_mound, ~!wc2_o_ogremagiupg
 		Queue: Infantry.orc2, RAInfantry.orc2
 		Description: Improved melee infantry.\nStinky, dumb and dangerous!
 		BuildDuration: 80
@@ -3435,6 +3508,46 @@ WC2_ORC_OGRE:
 		IdleSequences: stand
 	Voiced:
 		VoiceSet: wc2voiceorcogre
+	RenderSprites:
+		Scale: 0.6
+
+WC2_ORC_OGREMAGE:
+	Inherits@WC2_ORC_OGRE: WC2_ORC_OGRE
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
+		Cost: 150
+	Tooltip:
+		Name: Ogre-Mage
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: wc2_orc_ogre_mound, wc2_orc_altar_of_storms, ~wc2_o_ogremagiupg
+		Queue: Infantry.orc2, RAInfantry.orc2
+		Description: Improved melee infantry.\nStinky, smart, and dangerous!
+		BuildDuration: 80
+		BuildDurationModifier: 100
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 14400
+	Armor:
+		Type: None
+	#Food
+	Power:
+		Amount: -5
+	AutoTarget:
+		ScanRadius: 6
+		InitialStance: AttackAnything
+	Armament:
+		Weapon: wc2ogrepunch
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: stand
+	Voiced:
+		VoiceSet: wc2voiceorcogremage
 	RenderSprites:
 		Scale: 0.6
 
@@ -3605,6 +3718,8 @@ WC2_ORC_GOBLIN_ZEPPELIN:
 		Amount: -30
 	Voiced:
 		VoiceSet: wc2voiceorcgoblinzeppelin
+	RenderSprites:
+		Scale: 0.6
 
 WC2_ORC_DRAGON:
 	Inherits@WC2_HUMAN_GRYPHON_RIDER: WC2_HUMAN_GRYPHON_RIDER
@@ -3621,6 +3736,8 @@ WC2_ORC_DRAGON:
 		Amount: -30
 	Voiced:
 		VoiceSet: wc2voiceorcdragon
+	RenderSprites:
+		Scale: 0.6
 
 WC2_ORC_EYE_OF_KILROGG:
 	Inherits: ^Helicopter
@@ -3897,7 +4014,7 @@ wc2_h_rangerupg:
 wc2_h_ranger_longbow:
 	Inherits: ^Upgrade
 	Tooltip:
-		Name: Longbow
+		Name: Ranger Longbow
 	Buildable:
 		BuildPaletteOrder: 2
 		Queue: lumberupg.human2, RAlumberupg.human2
@@ -3917,7 +4034,7 @@ wc2_h_ranger_scouting:
 		BuildPaletteOrder: 3
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		Description: Increases vision range of Rangers by 25%.
+		Description: Increases vision range of Rangers by 50%.
 		Prerequisites: ~!wc2_h_ranger_scouting, ~wc2_h_rangerupg
 	Valued:
 		Cost: 1500
@@ -3927,7 +4044,7 @@ wc2_h_ranger_scouting:
 wc2_h_ranger_marksman:
 	Inherits: ^Upgrade
 	Tooltip:
-		Name: Ranger Scouting
+		Name: Ranger Marksman
 	Buildable:
 		BuildPaletteOrder: 4
 		Queue: lumberupg.human2, RAlumberupg.human2
@@ -4158,7 +4275,7 @@ wc2_o_berserkerupg:
 wc2_o_berserker_lighteraxes:
 	Inherits: ^Upgrade
 	Tooltip:
-		Name: Berserker
+		Name: Berserker Light Axes
 	Buildable:
 		BuildPaletteOrder: 2
 		Queue: lumberupg.orc2, RAlumberupg.orc2
@@ -4173,7 +4290,7 @@ wc2_o_berserker_lighteraxes:
 wc2_o_berserker_scouting:
 	Inherits: ^Upgrade
 	Tooltip:
-		Name: Berserker
+		Name: Berserker Scouting
 	Buildable:
 		BuildPaletteOrder: 3
 		Queue: lumberupg.orc2, RAlumberupg.orc2
@@ -4188,7 +4305,7 @@ wc2_o_berserker_scouting:
 wc2_o_berserker_regen:
 	Inherits: ^Upgrade
 	Tooltip:
-		Name: Berserker
+		Name: Berserker Regeneration
 	Buildable:
 		BuildPaletteOrder: 4
 		Queue: lumberupg.orc2, RAlumberupg.orc2
