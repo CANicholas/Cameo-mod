@@ -60,10 +60,8 @@ wc2ballistaFire:
 	Report: wc2_catapult.aud
 	ValidTargets: Ground
 	Projectile: Bullet
-		LaunchAngle: 56
-		Speed: 208
-			Inaccuracy: 0c256
-			Image: wc2_human_ballistabolt
+		Speed: 0c450
+		Image: wc2_human_ballistabolt
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c644
 		Damage: 24000
@@ -156,7 +154,7 @@ wc2submarineFire:
         Image: wc2_torpedo_submarine_turtle_projectile
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 1000
+		Damage: 9000
         ValidTargets: Water
 		Versus:
 			None: 300
@@ -180,7 +178,7 @@ wc2lightshipFire:
 		Image: wc2_cannon_projectile_medium
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 500
+		Damage: 5400
         ValidTargets: Ground, Water
 		Versus:
 			None: 300
@@ -204,7 +202,7 @@ wc2heavyshipFire:
         Image: wc2_hbattle_bship_jugger_projectile
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 1000
+		Damage: 15000
         ValidTargets: Ground, Water
 		Versus:
 			None: 300
@@ -228,7 +226,7 @@ wc2cannontowerFire:
         Image: wc2_cannon_projectile_medium
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 1000
+		Damage: 6000
         ValidTargets: Ground, Water
 		Versus:
 			None: 300

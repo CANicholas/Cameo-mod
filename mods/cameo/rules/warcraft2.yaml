@@ -402,18 +402,6 @@ Player:
 		DeathSequence: die
 		CrushedSequence: die-crushed
 		UseDeathTypeSuffix: false
-	GrantConditionOnPrerequisite@ShieldUpg:
-		Condition: shield_upg
-		Prerequisites: wc2_h_str_shield || wc2_o_str_shield
-	GrantConditionOnPrerequisite@ShieldUpg2:
-		Condition: shield_upg2
-		Prerequisites: wc2_h_str_shield2 || wc2_o_str_shield2
-	DamageMultiplier@ShieldUpg:
-		Modifier: 75
-		RequiresCondition: shield_upg
-	DamageMultiplier@ShieldUpg2:
-		Modifier: 75
-		RequiresCondition: shield_upg2
 
 ^WC2Worker:
 	Harvester:
@@ -437,13 +425,17 @@ Player:
 	#Production@CLASSICPRODUCTIONQUEUES:
 	#	PauseOnCondition: lowpower
 
+###############################################################
+# HUMAN INHERITABLES
+###############################################################
+
 ^wc2_h_str_sword:
 	GrantConditionOnPrerequisite@SwordUpg:
 		Condition: sword_upg
-		Prerequisites: wc2_h_str_sword || wc2_o_str_axe
+		Prerequisites: wc2_h_str_sword
 	GrantConditionOnPrerequisite@SwordUpg2:
 		Condition: sword_upg2
-		Prerequisites: wc2_h_str_sword2 || wc2_o_str_axe2
+		Prerequisites: wc2_h_str_sword2
 	FirepowerMultiplier@SwordUpg:
 		Modifier: 130
 		RequiresCondition: sword_upg
@@ -451,13 +443,27 @@ Player:
 		Modifier: 130
 		RequiresCondition: sword_upg2
 
+^wc2_h_str_shield:
+	GrantConditionOnPrerequisite@HShieldUpg:
+		Condition: hshield_upg
+		Prerequisites: wc2_h_str_shield
+	GrantConditionOnPrerequisite@HShieldUpg2:
+		Condition: hshield_upg2
+		Prerequisites: wc2_h_str_shield2
+	DamageMultiplier@HShieldUpg:
+		Modifier: 75
+		RequiresCondition: hshield_upg
+	DamageMultiplier@HShieldUpg2:
+		Modifier: 75
+		RequiresCondition: hshield_upg2
+
 ^wc2_h_str_arrow:
 	GrantConditionOnPrerequisite@ArrowUpg:
 		Condition: arrow_upg	
-		Prerequisites: wc2_h_str_arrow || wc2_o_str_throwaxe
+		Prerequisites: wc2_h_str_arrow
 	GrantConditionOnPrerequisite@ArrowUpg2:
 		Condition: arrow_upg2
-		Prerequisites: wc2_h_str_arrow2 || wc2_o_str_throwaxe2
+		Prerequisites: wc2_h_str_arrow2
 	FirepowerMultiplier@ArrowUpg:
 		Modifier: 140
 		RequiresCondition: arrow_upg
@@ -466,130 +472,218 @@ Player:
 		RequiresCondition: arrow_upg2
 
 ^wc2_h_str_ballista:
-	GrantConditionOnPrerequisite@CatUpg:
+	GrantConditionOnPrerequisite@BallUpg:
 		Condition: ballista_upg
-		Prerequisites: wc2_h_str_ballista || wc2_o_str_catapult
-	GrantConditionOnPrerequisite@CatUpg2:
+		Prerequisites: wc2_h_str_ballista
+	GrantConditionOnPrerequisite@BallUpg2:
 		Condition: ballista_upg2
-		Prerequisites: wc2_h_str_ballista2 || wc2_o_str_catapult2
-	FirepowerMultiplier@CatUpg:
+		Prerequisites: wc2_h_str_ballista2
+	FirepowerMultiplier@BallUpg:
 		Modifier: 140
 		RequiresCondition: ballista_upg
-	FirepowerMultiplier@CatUpg2:
+	FirepowerMultiplier@BallUpg2:
 		Modifier: 140
 		RequiresCondition: ballista_upg2
 
 ^wc2_h_str_cannon:
-	GrantConditionOnPrerequisite@cannonupgrade:
-		Condition: cannon_upg
-		Prerequisites: wc2_h_str_cannon || wc2_o_str_cannon
-	GrantConditionOnPrerequisite@cannonupgrade2:
-		Condition: cannon_upg2
-		Prerequisites: wc2_h_str_cannon2 || wc2_o_str_cannon2
-	FirepowerMultiplier@cannonupgrade:
+	GrantConditionOnPrerequisite@HCannonUpg:
+		Condition: hcannon_upg
+		Prerequisites: wc2_h_str_cannon
+	GrantConditionOnPrerequisite@HCannonUpg2:
+		Condition: hcannon_upg2
+		Prerequisites: wc2_h_str_cannon2
+	FirepowerMultiplier@HCannonUpg:
 		Modifier: 140
-		RequiresCondition: cannon_upg
-	FirepowerMultiplier@cannonupgrade2:
+		RequiresCondition: hcannon_upg
+	FirepowerMultiplier@HCannonUpg2:
 		Modifier: 140
-		RequiresCondition: cannon_upg2
+		RequiresCondition: hcannon_upg2
 
 ^wc2_h_str_navyshield:
-	GrantConditionOnPrerequisite@navysupgrade:
-		Condition: navyshield_upg
-		Prerequisites: wc2_h_str_navyshield || wc2_o_str_navyshield
-	GrantConditionOnPrerequisite@navysupgrade2:
-		Condition: navyshield_upg2
-		Prerequisites: wc2_h_str_navyshield2 || wc2_o_str_navyshield2
-	DamageMultiplier@navysupgrade:
+	GrantConditionOnPrerequisite@HNavySUpg:
+		Condition: hnavyshield_upg
+		Prerequisites: wc2_h_str_navyshield
+	GrantConditionOnPrerequisite@HNavySUpg2:
+		Condition: hnavyshield_upg2
+		Prerequisites: wc2_h_str_navyshield2
+	DamageMultiplier@HNavySUpg:
 		Modifier: 75
-		RequiresCondition: navyshield_upg
-	DamageMultiplier@navysupgrade2:
+		RequiresCondition: hnavyshield_upg
+	DamageMultiplier@HNavySUpg2:
 		Modifier: 75
-		RequiresCondition: navyshield_upg2
+		RequiresCondition: hnavyshield_upg2
 
 ^wc2_h_paladinupg:
-	GrantConditionOnPrerequisite@palupgrade:
+	GrantConditionOnPrerequisite@PalUpg:
 		Condition: paladin_upg
 		Prerequisites: wc2_h_paladinupg
-	DamageMultiplier@palupgrade:
+	DamageMultiplier@PalUpg:
 		Modifier: 80
 		RequiresCondition: paladin_upg
-	FirepowerMultiplier@palupgrade:
+	FirepowerMultiplier@PalUpg:
 		Modifier: 120
 		RequiresCondition: paladin_upg
 
 ^wc2_h_rangerupg:
-	GrantConditionOnPrerequisite@rangerupgrade:
+	GrantConditionOnPrerequisite@RangerUpg:
 		Condition: ranger_upg
 		Prerequisites: wc2_h_rangerupg
-	Health@rangerupgrade:
+	Health@RangerUpg:
 		Modifier: 120
 		RequiresCondition: ranger_upg
 
 ^wc2_h_ranger_longbow:
-	GrantConditionOnPrerequisite@rlbupgrade:
+	GrantConditionOnPrerequisite@RLongBowUpg:
 		Condition: rangerlb_upg
 		Prerequisites: wc2_h_ranger_longbow
-	RangeMultiplier@rlbupgrade:
+	RangeMultiplier@RLongBowUpg:
 		Modifier: 120
 		RequiresCondition: rangerlb_upg
 
 ^wc2_h_ranger_scouting:
-	GrantConditionOnPrerequisite@rsupgrade:
+	GrantConditionOnPrerequisite@RScoutUpg:
 		Condition: rangersc_upg
 		Prerequisites: wc2_h_ranger_scouting
-	RevealsShroudMultiplier@rsupgrade:
+	RevealsShroudMultiplier@RScoutUpg:
 		Modifier: 125
 		RequiresCondition: rangersc_upg
 
 ^wc2_h_ranger_marksman:
-	GrantConditionOnPrerequisite@rmmupgrade:
+	GrantConditionOnPrerequisite@RMarksmanUpg:
 		Condition: rangermm_upg
 		Prerequisites: wc2_h_ranger_marksman
-	FirepowerMultiplier@rmmupgrade:
+	FirepowerMultiplier@RMarksmanUpg:
 		Modifier: 115
 		RequiresCondition: rangermm_upg
 
+###############################################################
+# ORC INHERITABLES
+###############################################################
+
+^wc2_o_str_axe:
+	GrantConditionOnPrerequisite@AxeUpg:
+		Condition: axe_upg
+		Prerequisites: wc2_o_str_axe
+	GrantConditionOnPrerequisite@AxeUpg2:
+		Condition: axe_upg2
+		Prerequisites: wc2_o_str_axe2
+	FirepowerMultiplier@AxeUpg:
+		Modifier: 130
+		RequiresCondition: axe_upg
+	FirepowerMultiplier@AxeUpg2:
+		Modifier: 130
+		RequiresCondition: axe_upg2
+
+^wc2_o_str_shield:
+	GrantConditionOnPrerequisite@OShieldUpg:
+		Condition: oshield_upg
+		Prerequisites: wc2_o_str_shield
+	GrantConditionOnPrerequisite@OShieldUpg2:
+		Condition: oshield_upg2
+		Prerequisites: wc2_o_str_shield2
+	DamageMultiplier@OShieldUpg:
+		Modifier: 75
+		RequiresCondition: oshield_upg
+	DamageMultiplier@OShieldUpg2:
+		Modifier: 75
+		RequiresCondition: oshield_upg2
+
+^wc2_o_str_throwaxe:
+	GrantConditionOnPrerequisite@TAxeUpg:
+		Condition: throwaxe_upg	
+		Prerequisites: wc2_o_str_throwaxe
+	GrantConditionOnPrerequisite@TAxeUpg2:
+		Condition: throwaxe_upg2
+		Prerequisites: wc2_o_str_throwaxe2
+	FirepowerMultiplier@TAxeUpg:
+		Modifier: 140
+		RequiresCondition: throwaxe_upg
+	FirepowerMultiplier@TAxeUpg2:
+		Modifier: 140
+		RequiresCondition: throwaxe_upg2
+
+^wc2_o_str_catapult:
+	GrantConditionOnPrerequisite@CatUpg:
+		Condition: cat_upg
+		Prerequisites: wc2_o_str_catapult
+	GrantConditionOnPrerequisite@CatUpg2:
+		Condition: cat_upg2
+		Prerequisites: wc2_o_str_catapult2
+	FirepowerMultiplier@CatUpg:
+		Modifier: 140
+		RequiresCondition: cat_upg
+	FirepowerMultiplier@CatUpg2:
+		Modifier: 140
+		RequiresCondition: cat_upg2
+
+^wc2_o_str_cannon:
+	GrantConditionOnPrerequisite@OCannonUpg:
+		Condition: ocannon_upg
+		Prerequisites: wc2_o_str_cannon
+	GrantConditionOnPrerequisite@OCannonUpg2:
+		Condition: ocannon_upg2
+		Prerequisites: wc2_o_str_cannon2
+	FirepowerMultiplier@OCannonUpg:
+		Modifier: 140
+		RequiresCondition: ocannon_upg
+	FirepowerMultiplier@OCannonUpg2:
+		Modifier: 140
+		RequiresCondition: ocannon_upg2
+
+^wc2_o_str_navyshield:
+	GrantConditionOnPrerequisite@ONavySUpg:
+		Condition: onavyshield_upg
+		Prerequisites: wc2_o_str_navyshield
+	GrantConditionOnPrerequisite@ONavySUpg2:
+		Condition: onavyshield_upg2
+		Prerequisites: wc2_o_str_navyshield2
+	DamageMultiplier@ONavySUpg:
+		Modifier: 75
+		RequiresCondition: onavyshield_upg
+	DamageMultiplier@ONavySUpg2:
+		Modifier: 75
+		RequiresCondition: onavyshield_upg2
+
 ^wc2_o_ogremagiupg:
-	GrantConditionOnPrerequisite@omupgrade:
+	GrantConditionOnPrerequisite@OMUpg:
 		Condition: ogremagi_upg
 		Prerequisites: wc2_o_ogremagiupg
-	DamageMultiplier@omupgrade:
+	DamageMultiplier@OMUpg:
 		Modifier: 90
 		RequiresCondition: ogremagi_upg
-	FirepowerMultiplier@omupgrade:
+	FirepowerMultiplier@OMUpg:
 		Modifier: 130
 		RequiresCondition: ogremagi_upg
 
 ^wc2_o_berserkerupg:
-	GrantConditionOnPrerequisite@bersupgrade:
+	GrantConditionOnPrerequisite@BerserkerUpg:
 		Condition: berserker_upg
 		Prerequisites: wc2_o_berserker
-	DamageMultiplier@bersupgrade:
+	DamageMultiplier@BerserkerUpg:
 		Modifier: 75
 		RequiresCondition: berserker_upg
 
 ^wc2_o_berserker_lighteraxes:
-	GrantConditionOnPrerequisite@lighterupgrade:
+	GrantConditionOnPrerequisite@BLighterUpg:
 		Condition: berserkerla_upg
 		Prerequisites: wc2_o_berserker_lighteraxes
-	RangeMultiplier@lighterupgrade:
+	RangeMultiplier@BLighterUpg:
 		Modifier: 120
 		RequiresCondition: berserkerla_upg
 
 ^wc2_o_berserker_scouting:
-	GrantConditionOnPrerequisite@bsupgrade:
+	GrantConditionOnPrerequisite@BScoutUpg:
 		Condition: berserkersc_upg
 		Prerequisites: wc2_o_berserker_scouting
-	RevealsShroudMultiplier@bsupgrade:
+	RevealsShroudMultiplier@BScoutUpg:
 		Modifier: 125
 		RequiresCondition: berserkersc_upg
 
 ^wc2_o_berserker_regen:
-	GrantConditionOnPrerequisite@regenupgrade:
+	GrantConditionOnPrerequisite@BRegenUpg:
 		Condition: berserkerregen_upg
 		Prerequisites: wc2_o_berserker_regen
-	SelfHealing@regenupgrade:
+	SelfHealing@BRegenUpg:
 		PercentageStep: 5
 		Delay: 50
 		HealIfBelow: 100
@@ -1188,7 +1282,7 @@ WC2_HUMAN_GNOMISH_INVENTOR:
 		Name: Gnomish Inventor
 	Production@NORMAL:
 		Produces: Vehicle.human2
-  	Production@CLASSICPRODUCTIONQUEUES:
+	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RAVehicle.human2	  
 	GrantExternalConditionToProduced:
 		Condition: produced
@@ -1196,9 +1290,9 @@ WC2_HUMAN_GNOMISH_INVENTOR:
 		Type: Vehicle.human2
 	ProductionBar@NORMAL:
 		ProductionType: Vehicle.human2
-  	ProductionBar@CLASSICPRODUCTIONQUEUES:
+	ProductionBar@CLASSICPRODUCTIONQUEUES:
 		ProductionType: RAVehicle.human2	 
-   	Buildable:
+	Buildable:
 		BuildPaletteOrder: 16
 		Prerequisites: wc2_human_barracks ##once keep/castle are fixed, prereq will be wc2_human_keep
 		Queue: Building.human2, RABuilding.human2  
@@ -1312,7 +1406,7 @@ WC2_HUMAN_MAGE_TOWER:
 	Production@NORMAL:
 		Produces: MInfantry.human2
 		RequiresCondition: !classicproductionqueues
-  	Production@CLASSICPRODUCTIONQUEUES:
+	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RAMInfantry.human2
 		RequiresCondition: classicproductionqueues
 	GrantExternalConditionToProduced:
@@ -1687,6 +1781,7 @@ WC2_HUMAN_PEASANT:
 	Inherits@worker: ^WCWorker
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@HShieldUpg: ^wc2_h_str_shield
 	AutoTargetPriority@Repair:
 		ValidTargets: Repair, Repairing
 		ValidStances: Ally
@@ -1837,6 +1932,7 @@ WC2_HUMAN_FOOTMAN:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
 	Inherits@SwordUpg: ^wc2_h_str_sword
+	Inherits@HShieldUpg: ^wc2_h_str_shield
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -1878,7 +1974,8 @@ WC2_HUMAN_ELVEN_ARCHER:
 	Inherits: ^WC2Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@upgrade_arrows: ^wc2_h_str_arrow
+	Inherits@HShieldUpg: ^wc2_h_str_shield
+	Inherits@ArrowUpg: ^wc2_h_str_arrow
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1924,8 +2021,54 @@ WC2_HUMAN_KNIGHT:
 	Inherits: ^WC2Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@upgrade_swords: ^wc2_h_str_sword
-	Inherits@upgrade_paladin: ^wc2_h_paladinupg
+	Inherits@SwordUpg: ^wc2_h_str_sword
+	Inherits@HShieldUpg: ^wc2_h_str_shield
+	Inherits@PalUpg: ^wc2_h_paladinupg
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Knight
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 30
+		Prerequisites: wc2_human_stables
+		Queue: Infantry.human2, RAInfantry.human2
+		Description: Mounted infantry. Fast and durable.
+		BuildDuration: 300
+		BuildDurationModifier: 100
+	Mobile:
+		Speed: 56
+	Health:
+		HP: 28800
+	Armor:
+		Type: None
+	#Food
+	Power:
+		Amount: -5
+	AutoTarget:
+		ScanRadius: 7
+	Armament:
+		Weapon: wc2knightslice
+		FireDelay: 7
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences:
+	Crushable:
+	Voiced:
+		VoiceSet: wc2voicehumanknight
+	RenderSprites:
+		Scale: 0.6
+
+WC2_HUMAN_KNIGHT:
+	Inherits: ^WC2Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@SwordUpg: ^wc2_h_str_sword
+	Inherits@HShieldUpg: ^wc2_h_str_shield
+	Inherits@PalUpg: ^wc2_h_paladinupg
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1969,7 +2112,7 @@ WC2_HUMAN_BALLISTA:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXT: ^ExternalConditions
-	Inherits@upgrade_ballista: ^wc2_h_str_ballista
+	Inherits@BallUpg: ^wc2_h_str_ballista
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -2014,7 +2157,8 @@ WC2_HUMAN_DEMOLITIONSQUAD:
 	Inherits: ^WC2Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
-	Inherits@upgrade_swords: ^wc2_h_str_sword
+	Inherits@SwordUpg: ^wc2_h_str_sword
+	Inherits@HShieldUpg: ^wc2_h_str_shield
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -2058,6 +2202,7 @@ WC2_HUMAN_MAGE:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MCImmune 
+	Inherits@HShieldUpg: ^wc2_h_str_shield
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -2194,6 +2339,7 @@ WC2_HUMAN_OIL_TANKER:
 	Inherits: ^BoatUnit
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@EXT: ^ExternalConditions
+	Inherits@HNavySUpg: ^wc2_h_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites:
@@ -2268,6 +2414,7 @@ WC2_HUMAN_TRANSPORT:
 	Inherits: ^BoatUnit
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@EXT: ^ExternalConditions
+	Inherits@HNavySUpg: ^wc2_h_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_human_foundry
@@ -2314,6 +2461,8 @@ WC2_HUMAN_ELVEN_DESTROYER:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXT: ^ExternalConditions
 	Inherits@EMP: ^TurretEMP
+	Inherits@HCannonUpg: ^wc2_h_str_cannon
+	Inherits@HNavySUpg: ^wc2_h_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites:
@@ -2370,6 +2519,8 @@ WC2_HUMAN_BATTLESHIP:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXT: ^ExternalConditions
 	Inherits@EMP: ^TurretEMP
+	Inherits@HCannonUpg: ^wc2_h_str_cannon
+	Inherits@HNavySUpg: ^wc2_h_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_human_foundry, wc2_human_blacksmith ##once keep/castle are fixed, prereq will be wc2_human_keep, wc2_human_foundry
@@ -2422,6 +2573,8 @@ WC2_HUMAN_GNOMISH_SUBMARINE:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXT: ^ExternalConditions
 	Inherits@EMP: ^TurretEMP
+	Inherits@HCannonUpg: ^wc2_h_str_cannon
+	Inherits@HNavySUpg: ^wc2_h_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_human_foundry, wc2_human_gnomish_inventor
@@ -2586,7 +2739,7 @@ WC2_ORC_GREATHALL:
 	Production@NORMAL:
 		Produces: Building.orc2, Defence.orc2
 		RequiresCondition: !classicproductionqueues
- 	Production@CLASSICPRODUCTIONQUEUES:
+	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RABuilding.orc2, RADefence.orc2
 		RequiresCondition: classicproductionqueues	   
 	ProductionBar@Building:
@@ -2948,7 +3101,7 @@ WC2_ORC_TROLL_LUMBER_MILL:
 		Type: lumberupg.orc2 
 	ProductionBar@NORMAL:
 		ProductionType: lumberupg.orc2
- 	ProductionBar@CLASSICPRODUCTIONQUEUES:
+	ProductionBar@CLASSICPRODUCTIONQUEUES:
 		ProductionType: RAlumberupg.orc2
 	FreeActor:
 		Actor: wc2_orc_peon
@@ -2990,7 +3143,7 @@ WC2_ORC_GOBLIN_ALCHEMIST:
 		Name: Golbin Alchemist
 	Production@NORMAL:
 		Produces: Vehicle.orc2
-  	Production@CLASSICPRODUCTIONQUEUES:
+	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RAVehicle.orc2
 	GrantExternalConditionToProduced:
 		Condition: produced
@@ -3007,7 +3160,7 @@ WC2_ORC_GOBLIN_ALCHEMIST:
 	SpawnActorsOnSell:
 		ActorTypes: wc2_orc_grunt
 	Voiced:
-		VoiceSet: orctemplevoice
+		VoiceSet: wc2orcgoblinalchemist
 	RenderSprites:
 		Scale: 0.8
 
@@ -3176,7 +3329,7 @@ WC2_ORC_DRAGON_ROOST:
 	SpawnActorsOnSell:
 		ActorTypes: wc2_orc_grunt
 	Voiced:
-		VoiceSet: orctowervoice
+		VoiceSet: wc2orcdragonroost
 	RenderSprites:
 		Scale: 0.8
 
@@ -3221,7 +3374,7 @@ WC2_ORC_SKELETON:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: wc2_orc_temple_of_the_damned
-		Queue: Infantry.orc2, RAInfantry.orc2
+		Queue: DInfantry.orc2, RADInfantry.orc2
 		Description: Undead melee infantry. Spooky!
 	Armament:
 		Weapon: footmanSlice
@@ -3230,7 +3383,6 @@ WC2_ORC_SKELETON:
 
 WC2_ORC_TROLL_AXETHROWER:
 	Inherits@WC2_HUMAN_ELVEN_ARCHER: WC2_HUMAN_ELVEN_ARCHER
-	Inherits@upgrade_arrows: ^wc2_h_str_arrow
 	Tooltip:
 		Name: Troll Axethrower
 	Buildable:
@@ -3247,12 +3399,9 @@ WC2_ORC_TROLL_AXETHROWER:
 		Scale: 0.6
 
 WC2_ORC_OGRE:
-	Inherits: ^Soldier
-	Inherits@WC1Infantry: ^WC1Infantry
+	Inherits@WC2_HUMAN_KNIGHT: WC2_HUMAN_KNIGHT
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
-	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
-	Inherits@upgrade_swords: ^wc2_h_str_sword
 		Cost: 150
 	Tooltip:
 		Name: Ogre
@@ -3268,9 +3417,9 @@ WC2_ORC_OGRE:
 	Mobile:
 		Speed: 56
 	Health:
-		HP: 14400	
+		HP: 14400
 	Armor:
-		Type: None	 
+		Type: None
 	#Food
 	Power:
 		Amount: -5
@@ -3283,10 +3432,9 @@ WC2_ORC_OGRE:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		IdleSequences: stand
 	Voiced:
 		VoiceSet: wc2voiceorcogre
-	-Crushable: 
 	RenderSprites:
 		Scale: 0.6
 
@@ -3317,7 +3465,7 @@ WC2_ORC_GOBLINSAPPERS:
 	Buildable:
 		BuildPaletteOrder: 10
 		Prerequisites: wc2_orc_goblin_alchemist
-		Queue: Aircraft.orc2, Aircraft.orc2
+		Queue: Vehicle.orc2, RAVehicle.orc2
 		Description: Explosive suicide infantry. Can attack normally.
 		BuildDuration: 80
 		BuildDurationModifier: 100
@@ -3355,6 +3503,7 @@ WC2_ORC_DEATHKNIGHT:
 
 WC2_ORC_OIL_TANKER:
 	Inherits@WC2_HUMAN_OIL_TANKER: WC2_HUMAN_OIL_TANKER
+	Inherits@ONavySUpg: ^wc2_o_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites:
@@ -3375,6 +3524,8 @@ WC2_ORC_OIL_TANKER:
 
 WC2_ORC_TROLLDESTROYER:
 	Inherits@WC2_HUMAN_ELVEN_DESTROYER: WC2_HUMAN_ELVEN_DESTROYER
+	Inherits@OCannonUpg: ^wc2_o_str_cannon
+	Inherits@ONavySUpg: ^wc2_o_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites:
@@ -3389,6 +3540,7 @@ WC2_ORC_TROLLDESTROYER:
 
 WC2_ORC_TRANSPORT:
 	Inherits@WC2_HUMAN_TRANSPORT: WC2_HUMAN_TRANSPORT
+	Inherits@ONavySUpg: ^wc2_o_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_orc_foundry
@@ -3403,6 +3555,8 @@ WC2_ORC_TRANSPORT:
 
 WC2_ORC_OGRE_JUGGERNAUGHT:
 	Inherits@WC2_HUMAN_BATTLESHIP: WC2_HUMAN_BATTLESHIP
+	Inherits@OCannonUpg: ^wc2_o_str_cannon
+	Inherits@ONavySUpg: ^wc2_o_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_orc_foundry, wc2_orc_blacksmith ##once stronghold/fortress are fixed, prereq will be wc2_orc_stronghold, wc2_orc_foundry
@@ -3417,6 +3571,8 @@ WC2_ORC_OGRE_JUGGERNAUGHT:
 
 WC2_ORC_GIANT_TURTLE:
 	Inherits@WC2_HUMAN_GNOMISH_SUBMARINE: WC2_HUMAN_GNOMISH_SUBMARINE
+	Inherits@OCannonUpg: ^wc2_o_str_cannon
+	Inherits@ONavySUpg: ^wc2_o_str_navyshield
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_orc_foundry, wc2_orc_goblin_alchemist
@@ -3443,7 +3599,7 @@ WC2_ORC_GOBLIN_ZEPPELIN:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: wc2_orc_goblin_alchemist
-		Queue: Aircraft.orc2, RAAircraft.orc2, Aircraft.X_Aircrafts
+		Queue: Vehicle.orc2, RAVehicle.orc2
 		Description: Flying scout unit. He can see your house!\nDetector.
 	Power:
 		Amount: -30
@@ -3482,7 +3638,7 @@ WC2_ORC_EYE_OF_KILROGG:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: 
-		Queue: Aircraft.orc2, RAAircraft.orc2, Aircraft.X_Aircrafts
+		Queue: DInfantry.orc2, RADInfantry.orc2
 		Description: Fast, weak scouting unit.
 	Aircraft:
 		InitialFacing: 224
@@ -3523,7 +3679,7 @@ WC2_DAEMON_NEUTRAL:
 	Buildable:
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.medium
-		Queue: Aircraft.orc2, RAAircraft.orc2, Aircraft.X_Aircrafts
+		Queue: DInfantry.orc2, RADInfantry.orc2
 		Description: Daemonic flying attacker.
 	Aircraft:
 		InitialFacing: 224
@@ -3623,320 +3779,277 @@ wc2_goldmine:
 ##	HUMAN UPGRADES
 ####################################################################################################
 
+^Upgrade:
+	AlwaysVisible:
+	Interactable:
+	ScriptTriggers:
+	Buildable:
+		Queue: Upgrade
+		BuildLimit: 1
+		BuildDurationModifier: 100
+	ProvidesPrerequisite@upgradename:
+
 wc2_h_str_sword:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Sword Strength
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases melee damage by 30%.
 		Prerequisites: ~!wc2_h_str_sword
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_sword
-	ProvidesPrerequisite:
-		Prerequisite:
 
 wc2_h_str_sword2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Sword Strength II
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases melee damage by further 30%.
 		Prerequisites: ~!wc2_h_str_sword2, ~wc2_h_str_sword
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_sword2
-	ProvidesPrerequisite:
-		Prerequisite:
 
 wc2_h_str_shield:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Armor Strength
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all land units by 25%.
 		Prerequisites: ~!wc2_h_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_shield
-	ProvidesPrerequisite:
 
 wc2_h_str_shield2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Armor Strength II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all land units by further 25%.
 		Prerequisites: ~!wc2_h_str_shield2, ~wc2_h_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_shield2
-	ProvidesPrerequisite:
 
 wc2_h_str_arrow:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Arrow Strength
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases arrow damage dealt by Archers and Guard Towers by 40%.
 		Prerequisites: ~!wc2_h_str_arrow
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_arrow
-	ProvidesPrerequisite:
 
 wc2_h_str_arrow2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Arrow Strength II
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases arrow damage by Archers and Guard Towers by further 40%.
 		Prerequisites: ~!wc2_h_str_arrow2, ~wc2_h_str_arrow
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_arrow2
-	ProvidesPrerequisite:
 
 wc2_h_rangerupg:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ranger
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Intense training is given to Elven Archers.\nIncreases health by 20% and unlocks upgrades for the Ranger.
 		Prerequisites: ~!wc2_h_rangerupg ## when keep/castle are fixed, will require Castle
 	Valued:
 		Cost: 2500
 	RenderSprites:
 		Image: wc2_h_rangerupg
-	ProvidesPrerequisite:
 
 wc2_h_ranger_longbow:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Longbow
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases range of Rangers by 20%.
 		Prerequisites: ~!wc2_h_ranger_longbow, ~wc2_h_rangerupg
 	Valued:
 		Cost: 2000
 	RenderSprites:
 		Image: wc2_h_ranger_longbow
-	ProvidesPrerequisite:
 
 wc2_h_ranger_scouting:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ranger Scouting
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases vision range of Rangers by 25%.
 		Prerequisites: ~!wc2_h_ranger_scouting, ~wc2_h_rangerupg
 	Valued:
 		Cost: 1500
 	RenderSprites:
 		Image: wc2_h_ranger_scouting
-	ProvidesPrerequisite:
 
 wc2_h_ranger_marksman:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ranger Scouting
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 4
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases arrow damage of Rangers by 15%.
 		Prerequisites: ~!wc2_h_ranger_marksman, ~wc2_h_rangerupg
 	Valued:
 		Cost: 2250
 	RenderSprites:
 		Image: wc2_h_ranger_marksman
-	ProvidesPrerequisite:
 
 wc2_h_str_ballista:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ballista Strength
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases ballista damage dealt by Ballista by 40%
 		Prerequisites: ~!wc2_h_str_ballista
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_ballista
-	ProvidesPrerequisite:
 
 wc2_h_str_ballista2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ballista Strength II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases ballista damage dealt by Ballista by further 40%
 		Prerequisites: ~!wc2_h_str_ballista2, ~wc2_h_str_ballista
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_ballista2
-	ProvidesPrerequisite:
 
 wc2_h_str_cannon:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Cannon Damage
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 4
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases Cannon Damage dealt by Naval Vessels and Cannon Towers by 40%
 		Prerequisites: ~!wc2_h_str_cannon
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_cannon
-	ProvidesPrerequisite:
 
 wc2_h_str_cannon2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Cannon Damage II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 4
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases Cannon Damage dealt by Naval Vessels and Cannon Towers by further 40%
 		Prerequisites: ~!wc2_h_str_cannon2, ~wc2_h_str_cannon
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_cannon2
-	ProvidesPrerequisite:
 
 wc2_h_str_navyshield:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Naval Armor
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 5
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all Naval Vessels by 25%
 		Prerequisites: ~!wc2_h_str_navyshield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_navyshield
-	ProvidesPrerequisite:
 
 wc2_h_str_navyshield2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Naval Armor II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 5
 		Queue: blacksmithupg.human2, RAblacksmithupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all Naval Vessels by further 25%
 		Prerequisites: ~!wc2_h_str_navyshield2, ~wc2_h_str_navyshield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_str_navyshield2
-	ProvidesPrerequisite:
 
 wc2_h_paladinupg:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Paladin
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: churchupg.human2, RAchurchupg.human2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Perform holy rituals to turn your noble Knights into righteous Paladins!\nPaladins are more powerful and can cast Heal.\nIncreases damage resistance by 20%.\nIncreases melee damage by 10%.
 		Prerequisites: ~!wc2_h_paladinupg
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_h_paladinupg
-	ProvidesPrerequisite:
 
 ####################################################################################################
 ##	ORC UPGRADES
 ####################################################################################################
 
 wc2_o_str_axe:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Axe Strength
 	Buildable:
@@ -3951,214 +4064,178 @@ wc2_o_str_axe:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_axe
-	ProvidesPrerequisite:
-		Prerequisite: 
 
 wc2_o_str_axe2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Axe Strength II
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases melee damage by further 30%
 		Prerequisites: ~!wc2_o_str_axe2, ~wc2_o_str_axe
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_axe2
-	ProvidesPrerequisite:
-		Prerequisite: 
 
 wc2_o_str_shield:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Armor Strength
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all land units by 25%.
 		Prerequisites: ~!wc2_o_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_shield
-	ProvidesPrerequisite:
 
 wc2_o_str_shield2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Armor Strength II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all land units by further 25%.
 		Prerequisites: ~!wc2_o_str_shield2, ~wc2_o_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
-		Image: wc2_o_str_shield2
-	ProvidesPrerequisite:	  
+		Image: wc2_o_str_shield2  
 
 wc2_o_str_throwaxe:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Throwing Axe Strength
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases arrow damage dealt by Axethrowers and Guard Towers by 40%.
 		Prerequisites: ~!wc2_o_str_throwaxe
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_throwaxe
-	ProvidesPrerequisite:
 
 wc2_o_str_throwaxe2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Throwing Axe Strength II
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases arrow damage by Axethrowers and Guard Towers by further 40%
 		Prerequisites: ~!wc2_o_str_throwaxe2, ~wc2_o_str_throwaxe
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_throwaxe2
-	ProvidesPrerequisite:
 
 wc2_o_berserkerupg:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Berserker
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Troll Axethrowers are driven into a mad frenzy.\nIncreases health by 35% and unlocks upgrades for the Berserker.
 		Prerequisites: ~!wc2_o_berserkerupg
 	Valued:
 		Cost: 2500
 	RenderSprites:
 		Image: wc2_o_berserkerupg
-	ProvidesPrerequisite:
 
 wc2_o_berserker_lighteraxes:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Berserker
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 2
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases throwing range of Berserker axes by 20%.
 		Prerequisites: ~!wc2_o_berserker_lighteraxes, ~wc2_o_berserkerupg
 	Valued:
 		Cost: 2000
 	RenderSprites:
 		Image: wc2_o_berserker_lighteraxes
-	ProvidesPrerequisite:
 
 wc2_o_berserker_scouting:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Berserker
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	   
 		Description: Increases vision range of Berserkers by 25%.
 		Prerequisites: ~!wc2_o_berserker_scouting, ~wc2_o_berserkerupg
 	Valued:
 		Cost: 1500
 	RenderSprites:
 		Image: wc2_o_berserker_scouting
-	ProvidesPrerequisite:
 
 wc2_o_berserker_regen:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Berserker
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 4
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	   
 		Description: Berserkers heal over time.
 		Prerequisites: ~!wc2_o_berserker_regen, ~wc2_o_berserkerupg
 	Valued:
 		Cost: 2250
 	RenderSprites:
 		Image: wc2_o_berserker_regen
-	ProvidesPrerequisite:
 
 wc2_o_str_catapult:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Catapult Strength
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	   
 		Description: Increases Catapult damage by 40%
 		Prerequisites: ~!wc2_o_str_catapult
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_catapult
-	ProvidesPrerequisite:
 
 wc2_o_str_catapult2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Catapult Strength II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 3
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	   
 		Description: Increases Catapult damage by 40%
 		Prerequisites: ~!wc2_o_str_catapult2, ~wc2_o_str_catapult
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_catapult2
-	ProvidesPrerequisite:
 
 wc2_o_str_cannon:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Cannon Damage
 	Buildable:
-		BuildPaletteOrder: 1
+		BuildPaletteOrder: 4
 		BuildLimit: 1
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
@@ -4169,76 +4246,63 @@ wc2_o_str_cannon:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_cannon
-	ProvidesPrerequisite:
 
 wc2_o_str_cannon2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Cannon Damage II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 4
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	   
 		Description: Increases cannon damage dealt by Naval Vessels and Cannon Towers by further 40%
 		Prerequisites: ~!wc2_o_str_cannon2, ~wc2_o_str_cannon
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_cannon2
-	ProvidesPrerequisite:
 
 wc2_o_str_navyshield:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Naval Armor
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 5
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all Naval Vessels by 25%.
 		Prerequisites: ~!wc2_o_str_navyshield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_navyshield
-	ProvidesPrerequisite:
 
 wc2_o_str_navyshield2:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Naval Armor II
 	Buildable:
-		BuildPaletteOrder: 1
-		BuildLimit: 1
+		BuildPaletteOrder: 5
 		Queue: blacksmithupg.orc2, RAblacksmithupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100
 		Description: Increases damage resistance of all Naval Vessels by further 25%.
 		Prerequisites: ~!wc2_o_str_navyshield2, ~wc2_o_str_navyshield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_str_navyshield2
-	ProvidesPrerequisite:
 
 wc2_o_ogremagiupg:
-	Inherits: ^upgrade.template
+	Inherits: ^Upgrade
 	Tooltip:
 		Name: Ogre-Magi
 	Buildable:
 		BuildPaletteOrder: 1
-		BuildLimit: 1
 		Queue: altarupg.orc2, RAaltarupg.orc2
 		BuildDuration: 1500
-		BuildDurationModifier: 100	
 		Description: Perform mysterious rituals to transform your Ogres into Ogre-Magi!\nOgre-Magi are more powerful and can cast Bloodlust.\nBloodlust makes your units hit harder for a short time.\nIncreases damage resistance by 10%.\nIncreases melee damage by 20%.
 		Prerequisites: ~!wc2_o_ogremagiupg
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_ogremagiupg
-	ProvidesPrerequisite:

@@ -354,10 +354,20 @@ wc2orcaltarofstorms:
 	Voices:
 		Select: ochant
 		
+wc2orcgoblinalchemist:
+    DefaultVariant: .wav
+	Voices:
+		Select: alchemst
+
 wc2orcogremound:
     DefaultVariant: .aud 
 	Voices:
 		Select: ogrecamp
+
+wc2orcdragonroost:
+    DefaultVariant: .aud
+	Voices:
+		Select: dragon
 		
 wc2orctempleofthedamnedvoice:
     DefaultVariant: .aud  

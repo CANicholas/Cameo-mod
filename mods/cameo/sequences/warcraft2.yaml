@@ -45,9 +45,9 @@ wc2_mech_critter:
 ####################################################################################################
 
 wc2_human_ballistabolt:
-    idle: 
-        Start: 0
-        Facings: -8
+	idle:
+		Start: 0
+		Facings: -8
 
 wc2_catapult_stone_projectile:
 	idle:
@@ -480,9 +480,9 @@ wc2_human_scout_tower:
 		Start: 6
 		AddExtension: False
 	wc2_human_guard_tower: wc2_human_guard_tower
-        Start: 3
+		Start: 3
 	wc2_human_cannon_tower: wc2_human_cannon_tower
-        Start: 3
+		Start: 3
 
 wc2_human_guard_tower:
 	Inherits: ^WC2DamagedFire
@@ -523,7 +523,7 @@ wc2_human_cannon_tower:
 		Start: 7
 		AddExtension: False
 	upgrade_cannon_icon: wc2_cameos_human_buildings.png
-		Start: 7 
+		Start: 7
 		AddExtension: False
 
 ####################################################################################################
@@ -533,7 +533,7 @@ wc2_human_cannon_tower:
 wc2_human_peasant:
 	Inherits: ^WCInfantry
 	stand:
-		Start: 0	
+		Start: 0
 		Facings: -8
 	idle: 
 		Start: 0
@@ -548,7 +548,7 @@ wc2_human_peasant:
 		Length: 5
 		Facings: -8
 		Tick: 100
-    dock: 
+	dock: 
 		Start: 0	
 		Facings: -8
 	dock-loop:
@@ -563,10 +563,10 @@ wc2_human_peasant:
 		Length: 3
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 0
-        AddExtension: false
-    townhall_icon: wc2_cameos_human_buildings.png
-        Start: 1  
+		Start: 0
+		AddExtension: false
+	townhall_icon: wc2_cameos_human_buildings.png
+		Start: 1  
 		AddExtension: false
 		
 wc2_human_peasantgold:
@@ -604,7 +604,7 @@ wc2_human_footman:
 		Length: 3
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 1
+		Start: 1
 		AddExtension: False
 
 wc2_human_elven_archer:
@@ -634,7 +634,7 @@ wc2_human_elven_archer:
 		Length: 3
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 2
+		Start: 2
 		AddExtension: False
 
 wc2_human_knight:
@@ -664,13 +664,13 @@ wc2_human_knight:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 4
+		Start: 4
 		AddExtension: False
 
 wc2_human_paladin:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
 		Facings: -8
 	idle:
 		Start: 0
@@ -694,13 +694,13 @@ wc2_human_paladin:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 4
+		Start: 5
 		AddExtension: False
 
 wc2_human_demolitionsquad:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
 		Facings: -8
 	idle:
 		Start: 0
@@ -724,7 +724,7 @@ wc2_human_demolitionsquad:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 7
+		Start: 7
 		AddExtension: False
 
 wc2_human_mage:
@@ -754,7 +754,7 @@ wc2_human_mage:
 		Length: 7
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 8
+		Start: 8
 		AddExtension: False
 
 wc2_human_ballista:
@@ -763,7 +763,7 @@ wc2_human_ballista:
 		Frames: 0,2,4,6,8,10,12,14
 		Length: 1
 		Facings: -8
-	idle: 
+	idle:
 		Frames: 0,2,4,6,8,10,12,14
 		Length: 1
 		Facings: -8
@@ -786,7 +786,7 @@ wc2_human_ballista:
 		Length: 1
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 6
+		Start: 6
 		AddExtension: False
 
 ####################################################################################################
@@ -801,7 +801,7 @@ wc2_human_oil_tanker:
 		Start: 16
 		Length: 2
 	icon: wc2_cameos_human_units.png
-        Start: 11
+		Start: 11
 		AddExtension: False
 		
 wc2_human_transport:
@@ -812,7 +812,7 @@ wc2_human_transport:
 		Start: 7
 		Length: 2
 	icon: wc2_cameos_human_units.png
-        Start: 12
+		Start: 12
 		AddExtension: False
 
 wc2_human_elven_destroyer:
@@ -827,7 +827,7 @@ wc2_human_elven_destroyer:
 		Start: 8
 		Length: 2
 	icon: wc2_cameos_human_units.png
-        Start: 13
+		Start: 13
 		AddExtension: False
 
 wc2_human_battleship:
@@ -842,7 +842,7 @@ wc2_human_battleship:
 		Start: 8
 		Length: 2
 	icon: wc2_cameos_human_units.png
-        Start: 14
+		Start: 14
 		AddExtension: False
 
 wc2_human_gnomish_submarine:
@@ -862,7 +862,7 @@ wc2_human_gnomish_submarine:
 		Start: 8
 		Length: 2
 	icon: wc2_cameos_human_units.png
-        Start: 15
+		Start: 15
 		AddExtension: False
 
 ####################################################################################################
@@ -899,7 +899,7 @@ wc2_human_gryphon_rider:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_human_units.png
-        Start: 10
+		Start: 10
 		AddExtension: False
 
 ####################################################################################################
@@ -1222,13 +1222,13 @@ wc2_orc_watch_tower:
 	icon: wc2_cameos_orc_buildings.png
 		Start: 5
 		AddExtension: False
-    upgrade_guard_icon: wc2_cameos_orc_buildings.png
+	upgrade_guard_icon: wc2_cameos_orc_buildings.png
 		Start: 6
 		AddExtension: False
 	wc2_orc_guard_tower: wc2_orc_guard_tower
-        Start: 3
+		Start: 3
 	wc2_orc_cannon_tower: wc2_orc_cannon_tower
-        Start: 3
+		Start: 3
 
 wc2_orc_guard_tower:
 	Inherits: ^WC2DamagedFire
@@ -1247,7 +1247,7 @@ wc2_orc_guard_tower:
 	icon: wc2_cameos_orc_buildings.png
 		Start: 6
 		AddExtension: False
-    upgrade_guard_icon: wc2_cameos_orc_buildings.png
+	upgrade_guard_icon: wc2_cameos_orc_buildings.png
 		Start: 6
 		AddExtension: False
 
@@ -1268,8 +1268,8 @@ wc2_orc_cannon_tower:
 	icon: wc2_cameos_orc_buildings.png
 		Start: 7
 		AddExtension: False
-    upgrade_cannon_icon: wc2_cameos_orc_buildings.png
-		Start: 7 
+	upgrade_cannon_icon: wc2_cameos_orc_buildings.png
+		Start: 7
 		AddExtension: False
 
 
@@ -1284,11 +1284,11 @@ wc2_orc_cannon_tower:
 wc2_orc_peon:
 	Inherits: ^WCInfantry
 	stand:
-		Start: 0	
+		Start: 0
 		Facings: -8
 	idle: 
 		Start: 0		
-        Facings: -8
+		Facings: -8
 	run: 
 		Start: 8
 		Length: 5
@@ -1299,12 +1299,12 @@ wc2_orc_peon:
 		Length: 5
 		Facings: -8
 		Tick: 100
-    dock: 
-		Start: 0	
+	dock: 
+		Start: 0
 		Facings: -8
 	dock-loop:
-		Start: 0	
-		Facings: -8     
+		Start: 0
+		Facings: -8
 	die:
 		Start: 80
 		Length: 3
@@ -1314,10 +1314,10 @@ wc2_orc_peon:
 		Length: 3
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 0
-        AddExtension: false
-    greathall_icon: wc2_cameos_orc_buildings.png
-        Start: 1  
+		Start: 0
+		AddExtension: false
+	greathall_icon: wc2_cameos_orc_buildings.png
+		Start: 1
 		AddExtension: false
 		
 wc2_orc_peon_full:
@@ -1331,7 +1331,10 @@ wc2_orc_peon_full:
 wc2_orc_grunt:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1352,13 +1355,16 @@ wc2_orc_grunt:
 		Length: 2
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 1
+		Start: 1
 		AddExtension: False
 
 wc2_orc_skeleton:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1379,13 +1385,16 @@ wc2_orc_skeleton:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 17
+		Start: 17
 		AddExtension: False
 
 wc2_orc_troll_axethrower:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1406,13 +1415,16 @@ wc2_orc_troll_axethrower:
 		Length: 2
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 2
+		Start: 2
 		AddExtension: False
 
 wc2_orc_ogre:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1433,13 +1445,16 @@ wc2_orc_ogre:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 4
+		Start: 4
 		AddExtension: False
 
 wc2_orc_ogremagi:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1460,12 +1475,16 @@ wc2_orc_ogremagi:
 		Length: 5
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 4
+		Start: 4
 		AddExtension: False
 
 wc2_orc_catapult:
 	Inherits: ^WCInfantry
 	stand: 
+		Frames: 0,2,4,6,8,10,12,14
+		Length: 1
+		Facings: -8
+	idle:
 		Frames: 0,2,4,6,8,10,12,14
 		Length: 1
 		Facings: -8
@@ -1488,13 +1507,16 @@ wc2_orc_catapult:
 		Length: 1
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 6
+		Start: 6
 		AddExtension: False
 
 wc2_orc_goblinsappers:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1506,7 +1528,7 @@ wc2_orc_goblinsappers:
 		Length: 4
 		Facings: -8
 		Tick: 100
-	die: 
+	die:
 		Start:72
 		Length: 6
 		Tick: 80
@@ -1515,7 +1537,7 @@ wc2_orc_goblinsappers:
 		Length: 6
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 7
+		Start: 7
 		AddExtension: False
 
 aoe1_bowman:
@@ -1542,13 +1564,16 @@ aoe1_bowman:
 		Length: 2
 		Tick: 80
 	icon: wc2_cameos_orc_units.png
-        Start: 2
+		Start: 2
 		AddExtension: False
 
 wc2_orc_deathknight:
 	Inherits: ^WCInfantry
 	stand: 
-		Start: 0	
+		Start: 0
+		Facings: -8
+	idle:
+		Start: 0
 		Facings: -8
 	run: 
 		Start: 8
@@ -1715,7 +1740,7 @@ wc2_daemon_neutral:
 		Length: 5
 		Tick: 100
 	icon: cameos_wc2_extra.png
-        Start: 64
+		Start: 64
 		AddExtension: False
 
 

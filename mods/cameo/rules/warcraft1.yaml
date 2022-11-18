@@ -669,10 +669,10 @@ wc_h_barracks:
 		ExitCell: 1,1
 	Production@NORMAL:
 		Produces: Infantry.human
-        RequiresCondition: !classicproductionqueues  
-    Production@CLASSICPRODUCTIONQUEUES:
+		RequiresCondition: !classicproductionqueues  
+	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RAInfantry.human
-        RequiresCondition: classicproductionqueues      
+		RequiresCondition: classicproductionqueues      
 	GrantExternalConditionToProduced:
 		Condition: produced
 	ProductionQueue:

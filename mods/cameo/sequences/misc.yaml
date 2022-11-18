@@ -982,6 +982,10 @@ explosion:
         AddExtension: false
     d2k_personal_shield_heavy: d2k_personal_shield_heavy.png
         AddExtension: false
+	wc2_catapult_impact: cathit
+	wc2_building_collapse: wc2_building_collapse
+	wc2_cannon_explosion: wc2_cannon_explosion
+	
 rank:
 	Defaults:
 		Offset: 0, 3
