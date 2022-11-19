@@ -5448,27 +5448,25 @@ RA2EXCITER:
         
 RA2SKELETON:
 	Inherits: wc_o_skeleton
-    Inherits@upgrade_shields: ^wc_h_str_shield    
-    Inherits@upgrade_swords: ^wc_h_str_sword
-    Inherits@MC: ^MCImmune
-   	Buildable:
+	Inherits@MC: ^MCImmune
+	Buildable:
 		Queue: Infantry.SovietRA2, RAInfantry.SovietRA2
 		BuildPaletteOrder: 5
 		BuildDurationModifier: 100
-        BuildDuration: 60
+		BuildDuration: 60
 		Prerequisites: ~RA2DOOM
-        IconPalette: chrome
+		IconPalette: chrome
 		Description: Powewrful skeleton. Attacks in close combat. Regenerates health     
 	Tooltip:
 		Name: DOOM Skeleton
+	Mobile:
+		Speed: 59
 	Armament:
 		Weapon: skeletonSlice
-   	Health:
-		HP: 15000     
-    Valued:
-        Cost: 150
-    Mobile:
-		Speed: 59       
+	Health:
+		HP: 15000
+	Valued:
+		Cost: 150
     RenderSprites:
         Image: ra2doomskeleton       
     -MobSpawnerSlave:
