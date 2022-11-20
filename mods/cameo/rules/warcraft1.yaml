@@ -294,6 +294,7 @@ Player:
 		Offset: 128, 128, 0
 		ZOffset: -512 
 
+
 ^WC1Building:
 	GrantConditionOnDamageState:
 		ValidDamageStates: Medium
@@ -344,6 +345,10 @@ Player:
 	#Production@CLASSICPRODUCTIONQUEUES:
 	#	PauseOnCondition: lowpower	
 
+###############################################################
+# HUMAN INHERITABLES
+###############################################################
+
 ^wc_h_str_sword:
 	GrantConditionOnPrerequisite@SwordUpg:
 		Condition: sword_upg
@@ -357,13 +362,7 @@ Player:
 	FirepowerMultiplier@SwordUpg2:
 		Modifier: 130
 		RequiresCondition: sword_upg2
-	WithTextDecoration@SwordUpg:
-		Text: Sword
-		RequiresCondition: sword_upg
-	WithTextDecoration@SwordUpg2:
-		Text: Swordx2
-		RequiresCondition: sword_upg2
-        
+
 ^wc_h_str_shield:
 	GrantConditionOnPrerequisite@HShieldUpg:
 		Condition: shield_upg
@@ -375,16 +374,10 @@ Player:
 		Modifier: 75
 		RequiresCondition: shield_upg
 	DamageMultiplier@HShieldUpg2:
-		Modifier: 75        
-		RequiresCondition: shield_upg2
-	WithTextDecoration@HShieldUpg:
-		Text: Shield
-		RequiresCondition: shield_upg
-	WithTextDecoration@HShieldUpg2:
-		Text: Shieldx2
+		Modifier: 75
 		RequiresCondition: shield_upg2
 
-^wc_h_str_arrow:        
+^wc_h_str_arrow:
 	GrantConditionOnPrerequisite@ArrowUpg:
 		Condition: arrow_upg
 		Prerequisites: wc_h_str_arrow
@@ -397,12 +390,6 @@ Player:
 	FirepowerMultiplier@ArrowUpg2:
 		Modifier: 140
 		Condition: arrow_upg2
-	WithTextDecoration@ArrowUpg:
-		Text: Arrow
-		RequiresCondition: arrow_upg
-	WithTextDecoration@ArrowUpg2:
-		Text: Arrowx2
-		RequiresCondition: arrow_upg2
 
 ^wc_h_horses:
 	GrantConditionOnPrerequisite@HSpeedUpg:
@@ -417,12 +404,66 @@ Player:
 	SpeedMultiplier@HSpeedUpg2:
 		Modifier: 120
 		RequiresCondition: horses_upg2
-	WithTextDecoration@HSpeedUpg:
-		Text: Speed
-		RequiresCondition: horses_upg
-	WithTextDecoration@HSpeedUpg2:
-		Text: Speedx2
-		RequiresCondition: horses_upg2
+
+###############################################################
+# ORC INHERITABLES
+###############################################################    
+
+^wc_o_str_axe:
+	GrantConditionOnPrerequisite@AxeUpg:
+		Condition: axe_upg
+		Prerequisites: wc_o_str_axe
+	GrantConditionOnPrerequisite@AxeUpg2:
+		Condition: axe_upg2
+		Prerequisites: wc_o_str_axe2
+	FirepowerMultiplier@AxeUpg:
+		Modifier: 130
+		RequiresCondition: axe_upg
+	FirepowerMultiplier@AxeUpg2:
+		Modifier: 130
+		RequiresCondition: axe_upg2
+
+^wc_o_str_shield:
+	GrantConditionOnPrerequisite@OShieldUpg:
+		Condition: oshield_upg
+		Prerequisites: wc_o_str_shield
+	GrantConditionOnPrerequisite@OShieldUpg2:
+		Condition: oshield_upg2
+		Prerequisites: wc_o_str_shield2
+	DamageMultiplier@OShieldUpg:
+		Modifier: 75
+		RequiresCondition: oshield_upg
+	DamageMultiplier@OShieldUpg2:
+		Modifier: 75
+		RequiresCondition: oshield_upg2
+
+^wc_o_str_spear:
+	GrantConditionOnPrerequisite@SpearUpg:
+		Condition: spear_upg
+		Prerequisites: wc_o_str_spear
+	GrantConditionOnPrerequisite@SpearUpg2:
+		Condition: spear_upg2
+		Prerequisites: wc_o_str_spear2
+	FirepowerMultiplier@SpearUpg:
+		Modifier: 140
+		Condition: spear_upg
+	FirepowerMultiplier@SpearUpg2:
+		Modifier: 140
+		Condition: spear_upg2
+
+^wc_o_wolves:
+	GrantConditionOnPrerequisite@OSpeedUpg:
+		Condition: wolves_upg
+		Prerequisites: wc_o_wolves
+	GrantConditionOnPrerequisite@OSpeedUpg2:
+		Condition: wolves_upg2
+		Prerequisites: wc_o_wolves2
+	SpeedMultiplier@OSpeedUpg:
+		Modifier: 120
+		RequiresCondition: wolves_upg
+	SpeedMultiplier@OSpeedUpg2:
+		Modifier: 120
+		RequiresCondition: wolves_upg2
 
 ####################################################################################################
 #		BUILDING human
@@ -430,10 +471,10 @@ Player:
 wc_h_townhall:
 	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
-	Inherits@BURNABLE: ^WC1Building  
-	Inherits@CPQWP: ^CPQCondition
-	Inherits@ai: ^AIConyardCash
-	Inherits@conyard: ^Conyard
+  	Inherits@BURNABLE: ^WC1Building  
+    Inherits@CPQWP: ^CPQCondition
+    Inherits@ai: ^AIConyardCash
+    Inherits@conyard: ^Conyard
 	Selectable:
 		Bounds: 64,64
 	HitShape:
@@ -465,7 +506,7 @@ wc_h_townhall:
 		ActorTypes: wc_h_footman
 	ScalePowerWithHealth:
 	BaseBuilding:
-	SpawnActorPower@spysat:
+    SpawnActorPower@spysat:
 		PauseOnCondition: lowpower
 		OrderName: SpydronePower
 		Icon: wc_far_seeing
@@ -483,24 +524,24 @@ wc_h_townhall:
 		SupportPowerPaletteOrder: 10
 	Production@NORMAL:
 		Produces: Building.human, Defence.human
-		PauseOnCondition: lowpower
-		RequiresCondition: !classicproductionqueues
-	Production@CLASSICPRODUCTIONQUEUES:
+        PauseOnCondition: lowpower
+        RequiresCondition: !classicproductionqueues
+  	Production@CLASSICPRODUCTIONQUEUES:
 		Produces: RABuilding.human, RADefence.human
-		PauseOnCondition: lowpower
-		RequiresCondition: classicproductionqueues      
+        PauseOnCondition: lowpower
+        RequiresCondition: classicproductionqueues      
 	ProductionBar@Building:
 		ProductionType: Building.human
-		RequiresCondition: !classicproductionqueues
-	ProductionBar@RABuilding:
+        RequiresCondition: !classicproductionqueues
+    ProductionBar@RABuilding:
 		ProductionType: RABuilding.human
-		RequiresCondition: classicproductionqueues    
+        RequiresCondition: classicproductionqueues    
 	ProductionBar@Defence:
 		ProductionType: Defence.human
-		RequiresCondition: !classicproductionqueues      
-	ProductionBar@RADefence:
+        RequiresCondition: !classicproductionqueues      
+    ProductionBar@RADefence:
 		ProductionType: RADefence.human
-		RequiresCondition: classicproductionqueues  
+        RequiresCondition: classicproductionqueues  
 	ProductionQueue@Building:
 		Type: Building.human
 		DisplayOrder: 0
@@ -597,10 +638,10 @@ wc_h_farm:
         
 wc_h_guard_tower:
 	Inherits: ^Defense
-	Inherits@ArrowUpg: ^wc_h_str_arrow
 	Inherits@AUTOTARGET: ^AutoTargetAll
     Inherits@shape: ^2x2Shape    
     Inherits@BURNABLE: ^WC1Building
+    Inherits@upgrade_arrows: ^wc_h_str_arrow
 	Selectable:
 		Bounds: 40,40
 	Valued:
@@ -1239,6 +1280,7 @@ wc_o_farm:
         
 wc_o_guard_tower:
     Inherits: wc_h_guard_tower
+    Inherits@SpearUpg: ^wc_o_str_spear
     Buildable:
         Prerequisites: wc_o_barracks
         Queue: Defence.orc, RADefence.orc
@@ -1450,13 +1492,15 @@ poisoncloud:
 ####################################################################################################
 
 wc_h_peasant:
-	Inherits: ^DefaultSoldier
+	Inherits: ^Soldier
 	Inherits@WC1Infantry: ^WC1Infantry
-	Inherits@selection: ^SelectableEconomicUnit
+    Inherits@selection: ^SelectableEconomicUnit
 	Inherits@harv: ^Harvester
 	Inherits@worker: ^WCWorker
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@upgrade_shields: ^wc_h_str_shield
 	AutoTargetPriority@Repair:
 		ValidTargets: Repair, Repairing
 		ValidStances: Ally
@@ -1531,7 +1575,8 @@ wc_h_peasant:
 		VoiceSet: voicehuman  
 	WithInfantryBody:
 		DefaultAttackSequence: harvest
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4        
+    -DamagedByTerrain:   
     Passenger:
         CargoType: Worker 
 		PipType: Blue
@@ -1539,11 +1584,11 @@ wc_h_peasant:
 			wc_goldmine: indoors
 
 wc_h_mcv:
-	Inherits: ^DefaultSoldier
-	Inherits@WC1Infantry: ^WC1Infantry
+	Inherits: ^Soldier
+    Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXT: ^ExternalConditions
 	Inherits@mcv: ^MCV
-	Inherits@conyard: ^Conyard
+    Inherits@conyard: ^Conyard
 	Valued:
 		Cost: 1500
 	Buildable:
@@ -1569,7 +1614,7 @@ wc_h_mcv:
     -Crushable:
     WithInfantryBody:
 		-DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
 	Transforms:
 		IntoActor: wc_h_townhall
 		Offset: -1,-1
@@ -1601,14 +1646,14 @@ wc_o_mcv:
         Image: wc_o_peon
 	ProvidesPrerequisite@faction:
 		Prerequisite: mmwcorc
-
 wc_h_footman:
-	Inherits: ^DefaultSoldier
+	Inherits: ^Soldier
 	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
-	Inherits@SwordUpg: ^wc_h_str_sword
-	Inherits@HShieldUpg: ^wc_h_str_shield
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@upgrade_swords: ^wc_h_str_sword
+    Inherits@upgrade_shields: ^wc_h_str_shield
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -1642,18 +1687,19 @@ wc_h_footman:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voicehuman           
     -Crushable:  
     
 wc_h_archer:
-	Inherits: ^DefaultSoldier
+	Inherits: ^Soldier
 	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@ArrowUpg: ^wc_h_str_arrow
-	Inherits@HShieldUpg: ^wc_h_str_shield
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@upgrade_shields: ^wc_h_str_shield  
+    Inherits@upgrade_arrows: ^wc_h_str_arrow
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1689,19 +1735,19 @@ wc_h_archer:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voicehuman           
         
 wc_h_knight:
-	Inherits: ^DefaultSoldier
 	Inherits: ^Vehicle
-	Inherits@EXT: ^ExternalConditions
+    Inherits@EXT: ^ExternalConditions
+	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
-	Inherits@SwordUpg: ^wc_h_str_sword
-	Inherits@HShieldUpg: ^wc_h_str_shield
-	Inherits@HSpeedUpg: ^wc_h_horses
+    Inherits@upgrade_shields: ^wc_h_str_shield    
+    Inherits@upgrade_swords: ^wc_h_str_sword
+    Inherits@upgrade_horses: ^wc_h_horses 
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1741,16 +1787,18 @@ wc_h_knight:
     WithMoveAnimation:
         MoveSequence: run
     Voiced:
-		VoiceSet: voicehuman
+		VoiceSet: voicehuman     
+    -Explodes:
     Targetable@HEAL:
 		RequiresCondition: !parachute && !untargetable && damaged
 		TargetTypes: Heal, Healing
         
 wc_h_catapult:
 	Inherits: ^Vehicle
+	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXT: ^ExternalConditions
+    Inherits@EXT: ^ExternalConditions
 	Valued:
 		Cost: 850
 	Tooltip:
@@ -1790,11 +1838,12 @@ wc_h_catapult:
 		VoiceSet: voicehuman 
         
 wc_h_conjurer:
-	Inherits: ^DefaultSoldier
+	Inherits: ^Soldier
 	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@HShieldUpg: ^wc_h_str_shield
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@upgrade_shields: ^wc_h_str_shield
     Inherits@MC: ^MCImmune 
 	Valued:
 		Cost: 800
@@ -1829,7 +1878,7 @@ wc_h_conjurer:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voicehuman  
     RevealsShroud:
@@ -1838,11 +1887,12 @@ wc_h_conjurer:
 		Range: 6c0       
     
 wc_h_cleric:
-	Inherits: ^DefaultSoldier
+	Inherits: ^Soldier
 	Inherits@WC1Infantry: ^WC1Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@HShieldUpg: ^wc_h_str_shield
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@upgrade_shields: ^wc_h_str_shield  
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1887,7 +1937,7 @@ wc_h_cleric:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voicehuman  
  		
@@ -1895,6 +1945,7 @@ wc_h_scorpion:
 	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
     Inherits@SHADOW: ^WC1_Shadow
 	Valued:
 		Cost: 0
@@ -1930,8 +1981,10 @@ wc_h_scorpion:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
-	Voiced:
+		-IdleSequences: idle1,idle2,idle3,idle4
+    -Voiced:   
+    -Crushable:   
+    Voiced:
 		VoiceSet: AntVoice
 
 wc_n_scorpion:
@@ -1948,12 +2001,12 @@ wc_n_scorpion:
     RenderSprites:
         Image: wc_h_scorpion
 wc_h_waterelemental:
-	Inherits: ^DefaultSoldier
-	Inherits: ^WC1Infantry
+	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@elemental: ^WaterActor
-	Inherits@SHADOW: ^WC1_Shadow
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+    Inherits@elemental: ^WaterActor
+    Inherits@SHADOW: ^WC1_Shadow
 	Valued:
 		Cost: 0
 	Tooltip:
@@ -1962,20 +2015,20 @@ wc_h_waterelemental:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 56
-	ChangesHealth:
-		PercentageStep: -2
-		Step: 0
-		Delay: 20
-		StartIfBelow: 100    
+    ChangesHealth:
+        PercentageStep: -2
+        Step: 0
+        Delay: 20
+        StartIfBelow: 100    
 	Health:
 		HP: 45000
-	Armor:
+    Armor:
 		Type: None
 	#Food
 	Power:
 		Amount: 0
-	AutoTarget:
-		InitialStance: AttackAnything
+    AutoTarget:
+        InitialStance: AttackAnything
 		ScanRadius: 8
 	Armament:
 		Weapon: waterelementalFire
@@ -1983,8 +2036,10 @@ wc_h_waterelemental:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
-	Voiced:
+		-IdleSequences: idle1,idle2,idle3,idle4
+    -Voiced: 
+    -Crushable: 
+   	Voiced:
 		VoiceSet: AntVoice   
 
 wc_n_waterelemental:
@@ -2136,6 +2191,7 @@ wc_goldmine:
 
 wc_o_peon:
 	Inherits@wc_h_peasant: wc_h_peasant
+	Inherits@OShieldUpg: ^wc_o_str_shield
 	Tooltip:
 		Name: Peon
 	Buildable:
@@ -2147,10 +2203,12 @@ wc_o_peon:
 	WithHarvesterSpriteBody:
 		ImageByFullness: wc_o_peon, wc_o_peon_full
     Voiced:
-		VoiceSet: voiceorc
+		VoiceSet: voiceorc  
 
 wc_o_grunt:
 	Inherits@wc_h_footman: wc_h_footman
+	Inherits@OShieldUpg: ^wc_o_str_shield
+	Inherits@AxeUpg: ^wc_o_str_axe
 	Tooltip:
 		Name: Grunt
 	Buildable:
@@ -2160,11 +2218,13 @@ wc_o_grunt:
 		Description: Basic Melee Infantry. Slow but can take some damage.
 	Armament:
 		Weapon: footmanSlice
-	Voiced:
-		VoiceSet: voiceorc         
-        
+    Voiced:
+		VoiceSet: voiceorc
+
 wc_o_spearman:
 	Inherits@wc_h_archer: wc_h_archer
+	Inherits@OShieldUpg: ^wc_o_str_shield
+	Inherits@SpearUpg: ^wc_o_str_spear
 	Tooltip:
 		Name: Spearman
 	Buildable:
@@ -2173,13 +2233,14 @@ wc_o_spearman:
 		Description: Basic Ranged Infantry. Not as durable as Grunt.\nCan attack air
 	Armament:
 		Weapon: spearFire
-	Voiced:
+    Voiced:
 		VoiceSet: voiceorc       
         
 wc_o_raider:
 	Inherits@wc_h_knight: wc_h_knight
-	Inherits: ^DefaultSoldier
-	Inherits: ^Vehicle
+	Inherits@OShieldUpg: ^wc_o_str_shield
+	Inherits@AxeUpg: ^wc_o_str_axe
+	Inherits@OSpeedUpg: ^wc_o_wolves
 	Tooltip:
 		Name: Raider
 	Buildable:
@@ -2188,7 +2249,7 @@ wc_o_raider:
 		Description: Mounted Infantry. Fast and durable.
 	Armament:
 		Weapon: knightSlice
-	Voiced:
+    Voiced:
 		VoiceSet: voiceorc   
         
 wc_o_catapult:
@@ -2196,11 +2257,12 @@ wc_o_catapult:
 	Buildable:
 		Prerequisites: wc_o_blacksmith
 		Queue: Infantry.orc, RAInfantry.orc
-	Voiced:
+    Voiced:
 		VoiceSet: voiceorc 
         
 wc_o_warlock:
 	Inherits@wc_h_conjurer: wc_h_conjurer
+	Inherits@OShieldUpg: ^wc_o_str_shield
 	Tooltip:
 		Name: Warlock
 	UpdatesPlayerStatistics:
@@ -2209,17 +2271,18 @@ wc_o_warlock:
 		Prerequisites: wc_o_tower
 		Queue: Aircraft.orc, RAAircraft.orc
 		Description: Spell Caster.\nFar seer\nCan summon Spider and Demon\nCan attack Air\nDetector
-	Armament:
-		Weapon: summon1_spider
+    Armament:
+        Weapon: summon1_spider
 	Armament@1:
 		Weapon: fireballWarlock
-	Armament@2:
-		Weapon: summon2_daemon     
-	Voiced:
+    Armament@2:
+        Weapon: summon2_daemon     
+    Voiced:
 		VoiceSet: voiceorc       
        
 wc_o_necrolyte:
-	Inherits@wc_h_cleric: wc_h_cleric 
+	Inherits@wc_h_cleric: wc_h_cleric
+	Inherits@OShieldUpg: ^wc_o_str_shield
 	Tooltip:
 		Name: Necrolyte
 	UpdatesPlayerStatistics:
@@ -2228,11 +2291,11 @@ wc_o_necrolyte:
 		Prerequisites: wc_o_damnedtemple
 		Queue: Vehicle.orc, RAVehicle.orc
 		Description: Support Caster. Heals nearby units.
-	Armament@3:
+  	Armament@3:
 		Weapon: fireballNecrolyte
 		TargetStances: Enemy
 		ForceTargetStances: None            
-	Voiced:
+    Voiced:
 		VoiceSet: voiceorc
  		
 wc_o_spider:
@@ -2262,34 +2325,38 @@ wc_n_spider:
         
 wc_o_skeleton:
 	Inherits@wc_h_scorpion: wc_h_scorpion
-	Inherits@MC: ^MCImmune
-	-Buildable:
+    Inherits@upgrade_shields: ^wc_h_str_shield    
+    Inherits@upgrade_swords: ^wc_h_str_sword
+    Inherits@MC: ^MCImmune
+    -Buildable:
 	Tooltip:
 		Name: Skeleton
 	Armament:
 		Weapon: skeletonSlice
-	Mobile:
-		Speed: 75
-	Health:
-		HP: 5400
-	AutoTarget:
-		InitialStance: AttackAnything
-		ScanRadius: 6
-	ChangesHealth:
-		PercentageStep: 5
-		Step: 0
-		Delay: 16
-		StartIfBelow: 100
-	RenderSprites:
-	MobSpawnerSlave:
-	RejectsOrders:
-	Voiced:
-		VoiceSet: voiceskeleton
+   	Health:
+		HP: 5400     
+    Mobile:
+		Speed: 75       
+    AutoTarget:
+        InitialStance: AttackAnything
+		ScanRadius: 6     
+    ChangesHealth:
+        PercentageStep: 5
+        Step: 0
+        Delay: 16
+        StartIfBelow: 100  
+    RenderSprites:
+    MobSpawnerSlave:
+    RejectsOrders:
+    Voiced:
+        VoiceSet: voiceskeleton
+    -TakeCover:
+	-ActorLostNotification: 
     
 wc_o_demon:
 	Inherits@WD: wc_h_waterelemental
-	Inherits@elemental: ^FireActor  
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+    Inherits@elemental: ^FireActor  
+    Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
 		Name: Demon
 	Armament:
@@ -2301,24 +2368,24 @@ wc_o_demon:
         Bounds: 32,32,0,0
 
 wc_n_demon:
-	Inherits: wc_o_demon
-	Buildable:
-		Queue: WC.Neutral
-		Description: This beast comes from hell itself and therefore cannot be hurt by fire
-		BuildDuration: 1500
-		BuildDurationModifier: 100
-		-Prerequisites:
-	Valued:
-		Cost: 2500
-	Mobile:
-		Speed: 100
-	ReloadDelayMultiplier:
-		Modifier: 80
-	Health:
-		HP: 175000
-	RenderSprites:
-		Image: wc_o_demon
-	-ChangesHealth:
+    Inherits: wc_o_demon
+    Buildable:
+        Queue: WC.Neutral
+        Description: This beast comes from hell itself and therefore cannot be hurt by fire
+        BuildDuration: 1500
+        BuildDurationModifier: 100
+        -Prerequisites:
+    Valued:
+        Cost: 2500
+    Mobile:
+        Speed: 100
+    ReloadDelayMultiplier:
+        Modifier: 80
+    Health:
+        HP: 175000
+    RenderSprites:
+        Image: wc_o_demon
+    -ChangesHealth
     
 wc_o_skeleton_army:
 	Inherits@1: ^ExistsInWorld
@@ -2387,6 +2454,7 @@ wc_n_brigand:
 	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
 	Valued:
 		Cost: 120
 	Tooltip:
@@ -2416,7 +2484,7 @@ wc_n_brigand:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voicehuman           
     -Crushable:   
@@ -2425,6 +2493,7 @@ wc_n_ogre:
 	Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -2454,15 +2523,16 @@ wc_n_ogre:
 		UseDeathTypeSuffix: false
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: voiceorc          
     -Crushable:   
     
 wc_n_slime:
-	Inherits: ^Soldier
+    Inherits: ^Soldier
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
     Inherits@SHADOW: ^WC1_Shadow
 	Valued:
 		Cost: 800
@@ -2498,7 +2568,7 @@ wc_n_slime:
         -CrushedSequence:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences:
+		-IdleSequences: idle1,idle2,idle3,idle4
     Voiced:
 		VoiceSet: AntVoice       
     -Crushable:   
@@ -2550,16 +2620,6 @@ wc_n_slime_c:
 #                     UPGRADES                        #
 #######################################################     
 
-^Upgrade:
-	AlwaysVisible:
-	Interactable:
-	ScriptTriggers:
-	Buildable:
-		Queue: Upgrade
-		BuildLimit: 1
-		BuildDurationModifier: 100
-	ProvidesPrerequisite@upgradename:
-
 wc_h_str_arrow:
 	Inherits: ^upgrade.template
 	Tooltip:
@@ -2568,7 +2628,7 @@ wc_h_str_arrow:
 		BuildPaletteOrder: 1
 		Queue: lumberupg.human, RAlumberupg.human
 		BuildDuration: 1500
-		BuildDurationModifier: 100       
+		BuildDurationModifier: 100
 		Description: Increases Arrow Damage dealt by Archers and Guard Towers by 40%
 		Prerequisites: ~!wc_h_str_arrow
 	Valued:
@@ -2578,14 +2638,14 @@ wc_h_str_arrow:
 	ProvidesPrerequisite:
 
 wc_h_str_arrow2:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Arrow Strength
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: lumberupg.human, RAlumberupg.human
 		BuildDuration: 1500
-		BuildDurationModifier: 100       
+		BuildDurationModifier: 100
 		Description: Increases Arrow Damage by Archers and Guard Towers by further 40%
 		Prerequisites: ~!wc_h_str_arrow2, ~wc_h_str_arrow
 	Valued:
@@ -2595,176 +2655,216 @@ wc_h_str_arrow2:
 	ProvidesPrerequisite:
 
 wc_h_str_sword:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Sword Strength
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: blacksmithupg.human, RAblacksmithupg.human
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Sword Damage by 30%
 		Prerequisites: ~!wc_h_str_sword
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_str_sword
+	ProvidesPrerequisite:  
 
 wc_h_str_sword2:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Sword Strength II
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: blacksmithupg.human, RAblacksmithupg.human
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Sword Damage by further 30%
 		Prerequisites: ~!wc_h_str_sword2, ~wc_h_str_sword
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_str_sword2
+	ProvidesPrerequisite:
  
 wc_h_str_shield:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Shield Strength
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: blacksmithupg.human, RAblacksmithupg.human
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Shield Resistance of all units by 25%
 		Prerequisites: ~!wc_h_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_str_shield
+	ProvidesPrerequisite:
 
 wc_h_str_shield2:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Shield Strength II
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: blacksmithupg.human, RAblacksmithupg.human
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Shield Resistance of all units by further 25%
 		Prerequisites: ~!wc_h_str_shield2, ~wc_h_str_shield
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_str_shield2
+	ProvidesPrerequisite:
     
 wc_h_horses:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Breed Faster Horses
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: stablesupg.human, RAstablesupg.human 
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Horses speed by 20%
 		Prerequisites: ~!wc_h_horses
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_horses
+	ProvidesPrerequisite:   
 
 wc_h_horses2:
-	Inherits: ^Upgrade
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Breed Faster Horses II
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: stablesupg.human, RAstablesupg.human 
 		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Horses speed by further 20%
 		Prerequisites: ~!wc_h_horses2, ~wc_h_horses
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_horses2
+	ProvidesPrerequisite:
       
 wc_o_str_spear:
-	Inherits@spear: wc_h_str_arrow
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Spear Strength
 	Buildable:
-		Queue: lumberupg.orc, RAlumberupg.orc      
+		BuildPaletteOrder: 1
+		Queue: lumberupg.orc, RAlumberupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Spear Damage dealt by Spearmen and Guard Towers by 35%
 		Prerequisites: ~!wc_o_str_spear
 	RenderSprites:
 		Image: wc_o_str_spear
 
 wc_o_str_spear2:
-	Inherits@spear: wc_h_str_arrow2
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Spear Strength II
 	Buildable:
+		BuildPaletteOrder: 1
 		Queue: lumberupg.orc, RAlumberupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Spear Damage dealt by Spearmen and Guard Towers by further 35%
 		Prerequisites: ~!wc_o_str_spear2, ~wc_o_str_spear
 	RenderSprites:
 		Image: wc_o_str_spear2
 
 wc_o_str_axe:
-	Inherits@axe: wc_h_str_sword
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Axe Strength
 	Buildable:
+		BuildPaletteOrder: 1
 		Queue: blacksmithupg.orc, RAblacksmithupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Axe Damage by 30%
-		Prerequisites: ~!wc_o_str_axe2   
+		Prerequisites: ~!wc_o_str_axe   
 	Valued:
 		Cost: 500
 	RenderSprites:
 		Image: wc_o_str_axe
 
 wc_o_str_axe2:
-	Inherits@axe: wc_h_str_sword2
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Axe Strength II
 	Buildable:
-		Queue: blacksmithupg.orc, RAblacksmithupg.orc   
+		BuildPaletteOrder: 1
+		Queue: blacksmithupg.orc, RAblacksmithupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Axe Damage by further 30%
 		Prerequisites: ~!wc_o_str_axe2, ~wc_o_str_axe
 	RenderSprites:
 		Image: wc_o_str_axe2
  
 wc_o_str_shield:
-	Inherits@shld: wc_h_str_shield
+	Inherits: ^upgrade.template
+	Tooltip:
+		Name: Armor Stength
 	Buildable:
-		Queue: blacksmithupg.orc, RAblacksmithupg.orc    
+		BuildPaletteOrder: 2
+		Queue: blacksmithupg.orc, RAblacksmithupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Description: Increases damage resistance by 25%.
 		Prerequisites: ~!wc_o_str_shield
 	RenderSprites:
 		Image: wc_o_str_shield
         
 wc_o_str_shield2:
-	Inherits@shld: wc_h_str_shield2
+	Inherits: ^upgrade.template
+	Tooltip:
+		Name: Armor Stength II
 	Buildable:
+		BuildPaletteOrder: 2
 		Queue: blacksmithupg.orc, RAblacksmithupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		Description: Increases damage resistance by further 25%.
 		Prerequisites: ~!wc_o_str_shield2, ~wc_o_str_shield
 	RenderSprites:
 		Image: wc_o_str_shield2
     
 wc_o_wolves:
-	Inherits@wolves: wc_h_horses
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Breed Faster Wolves
 	Buildable:
 		BuildPaletteOrder: 1
-		Queue: kennelupg.orc, RAkennelupg.orc   
+		Queue: kennelupg.orc, RAkennelupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100   
 		Description: Increases Wolves speed by 20%
 		Prerequisites: ~!wc_o_wolves
 	RenderSprites:
 		Image: wc_o_wolves
 
 wc_o_wolves2:
-	Inherits@wolves: wc_h_horses2
+	Inherits: ^upgrade.template
 	Tooltip:
 		Name: Breed Faster Wolves II
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: kennelupg.orc, RAkennelupg.orc
+		BuildDuration: 1500
+		BuildDurationModifier: 100
 		Description: Increases Wolves speed by further 20%
 		Prerequisites: ~!wc_o_wolves2, ~wc_o_wolves
 	RenderSprites:
@@ -2776,23 +2876,23 @@ wc_h_upgradefarm:
 	Buildable:
 		BuildPaletteOrder: 1
 		Queue: Farmupgrade.human
-        BuildDuration: 1125
-        BuildDurationModifier: 100       
+		BuildDuration: 1125
+		BuildDurationModifier: 100       
 		Description: Expands farm gaining 100 more food out of this farm
-        Icon: expand-icon
+		Icon: expand-icon
 	Valued:
 		Cost: 1000
 	RenderSprites:
 		Image: wc_h_farm
-    Interactable:
+	Interactable:
 	AlwaysVisible:
-  	KillsSelf:
+	KillsSelf:
 		RemoveInstead: true     
         
 wc_o_upgradefarm:
-    Inherits: wc_h_upgradefarm
-    Buildable:
-        Icon: expand-icon
-        Queue: Farmupgrade.orc
-    RenderSprites:
+	Inherits: wc_h_upgradefarm
+	Buildable:
+		Icon: expand-icon
+		Queue: Farmupgrade.orc
+	RenderSprites:
 		Image: wc_o_farm

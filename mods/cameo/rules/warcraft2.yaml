@@ -659,8 +659,8 @@ Player:
 	GrantConditionOnPrerequisite@BerserkerUpg:
 		Condition: berserker_upg
 		Prerequisites: wc2_o_berserker
-	DamageMultiplier@BerserkerUpg:
-		Modifier: 75
+	Health@BerserkerUpg:
+		Modifier: 120
 		RequiresCondition: berserker_upg
 
 ^wc2_o_berserker_lighteraxes:
@@ -3391,6 +3391,7 @@ WC2_ORC_DRAGON_ROOST:
 ####################################################################################################
 WC2_ORC_PEON:
 	Inherits@wc2_human_peasant: WC2_HUMAN_PEASANT
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 	Tooltip:
 		Name: Peon
 	Buildable:
@@ -3408,6 +3409,8 @@ WC2_ORC_PEON:
 		
 WC2_ORC_GRUNT:
 	Inherits@wc2_human_footman: WC2_HUMAN_FOOTMAN
+	Inherits@WC2AxeUpg: ^wc2_o_str_axe
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 	Tooltip:
 		Name: Grunt
 	Buildable:
@@ -3422,6 +3425,7 @@ WC2_ORC_GRUNT:
 
 WC2_ORC_SKELETON:
 	Inherits@wc2_human_footman: WC2_HUMAN_FOOTMAN
+	Inherits@WC2AxeUpg: ^wc2_o_str_axe
 	Tooltip:
 		Name: Skeleton
 	Buildable:
@@ -3432,10 +3436,12 @@ WC2_ORC_SKELETON:
 	Armament:
 		Weapon: footmanSlice
 	Voiced:
-		VoiceSet: voiceorc 
+		VoiceSet: voiceskeleton
 
 WC2_ORC_TROLL_AXETHROWER:
 	Inherits@WC2_HUMAN_ELVEN_ARCHER: WC2_HUMAN_ELVEN_ARCHER
+	Inherits@TAxeUpg: ^wc2_o_str_throwaxe
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 	Tooltip:
 		Name: Troll Axethrower
 	Buildable:
@@ -3475,6 +3481,8 @@ WC2_ORC_OGRE:
 	Inherits@WC2_HUMAN_KNIGHT: WC2_HUMAN_KNIGHT
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
+	Inherits@WC2AxeUpg: ^wc2_o_str_axe
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 		Cost: 150
 	Tooltip:
 		Name: Ogre
@@ -3515,6 +3523,9 @@ WC2_ORC_OGREMAGE:
 	Inherits@WC2_ORC_OGRE: WC2_ORC_OGRE
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMoveMelee
+	Inherits@WC2AxeUpg: ^wc2_o_str_axe
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
+	Inherits@OMUpg: ^wc2_o_ogremagiupg
 		Cost: 150
 	Tooltip:
 		Name: Ogre-Mage
@@ -3553,6 +3564,7 @@ WC2_ORC_OGREMAGE:
 
 WC2_ORC_CATAPULT:
 	Inherits@WC2_HUMAN_BALLISTA: WC2_HUMAN_BALLISTA
+	Inherits@CatUpg: ^wc2_o_str_catapult
 	Tooltip:
 		Name: Catapult
 	UpdatesPlayerStatistics:
@@ -3571,6 +3583,8 @@ WC2_ORC_CATAPULT:
 
 WC2_ORC_GOBLINSAPPERS:
 	Inherits@WC2_HUMAN_DEMOLITIONSQUAD: WC2_HUMAN_DEMOLITIONSQUAD
+	Inherits@WC2AxeUpg: ^wc2_o_str_axe
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -3591,6 +3605,7 @@ WC2_ORC_GOBLINSAPPERS:
 
 WC2_ORC_DEATHKNIGHT:
 	Inherits@wc_h_conjurer: wc_h_conjurer
+	Inherits@WC2OShieldUpg: ^wc2_o_str_shield
 	Tooltip:
 		Name: Death Knight
 	UpdatesPlayerStatistics:
@@ -4423,3 +4438,83 @@ wc2_o_ogremagiupg:
 		Cost: 1000
 	RenderSprites:
 		Image: wc2_o_ogremagiupg
+
+^wc_h_str_sword:
+	GrantConditionOnPrerequisite@SwordUpg:
+		Condition: sword_upg
+		Prerequisites: wc_h_str_sword
+	GrantConditionOnPrerequisite@SwordUpg2:
+		Condition: sword_upg2
+		Prerequisites: wc_h_str_sword2
+	FirepowerMultiplier@SwordUpg:
+		Modifier: 130
+		RequiresCondition: sword_upg
+	FirepowerMultiplier@SwordUpg2:
+		Modifier: 130
+		RequiresCondition: sword_upg2
+	WithTextDecoration@SwordUpg:
+		Text: Sword
+		RequiresCondition: sword_upg
+	WithTextDecoration@SwordUpg2:
+		Text: Swordx2
+		RequiresCondition: sword_upg2
+        
+^wc_h_str_shield:
+	GrantConditionOnPrerequisite@HShieldUpg:
+		Condition: shield_upg
+		Prerequisites: wc_h_str_shield
+	GrantConditionOnPrerequisite@HShieldUpg2:
+		Condition: shield_upg2
+		Prerequisites: wc_h_str_shield2
+	DamageMultiplier@HShieldUpg:
+		Modifier: 75
+		RequiresCondition: shield_upg
+	DamageMultiplier@HShieldUpg2:
+		Modifier: 75        
+		RequiresCondition: shield_upg2
+	WithTextDecoration@HShieldUpg:
+		Text: Shield
+		RequiresCondition: shield_upg
+	WithTextDecoration@HShieldUpg2:
+		Text: Shieldx2
+		RequiresCondition: shield_upg2
+
+^wc_h_str_arrow:        
+	GrantConditionOnPrerequisite@ArrowUpg:
+		Condition: arrow_upg
+		Prerequisites: wc_h_str_arrow
+	GrantConditionOnPrerequisite@ArrowUpg2:
+		Condition: arrow_upg2
+		Prerequisites: wc_h_str_arrow2
+	FirepowerMultiplier@ArrowUpg:
+		Modifier: 140
+		Condition: arrow_upg
+	FirepowerMultiplier@ArrowUpg2:
+		Modifier: 140
+		Condition: arrow_upg2
+	WithTextDecoration@ArrowUpg:
+		Text: Arrow
+		RequiresCondition: arrow_upg
+	WithTextDecoration@ArrowUpg2:
+		Text: Arrowx2
+		RequiresCondition: arrow_upg2
+
+^wc_h_horses:
+	GrantConditionOnPrerequisite@HSpeedUpg:
+		Condition: horses_upg
+		Prerequisites: wc_h_horses
+	GrantConditionOnPrerequisite@HSpeedUpg2:
+		Condition: horses_upg2
+		Prerequisites: wc_h_horses2
+	SpeedMultiplier@HSpeedUpg:
+		Modifier: 120
+		RequiresCondition: horses_upg
+	SpeedMultiplier@HSpeedUpg2:
+		Modifier: 120
+		RequiresCondition: horses_upg2
+	WithTextDecoration@HSpeedUpg:
+		Text: Speed
+		RequiresCondition: horses_upg
+	WithTextDecoration@HSpeedUpg2:
+		Text: Speedx2
+		RequiresCondition: horses_upg2
