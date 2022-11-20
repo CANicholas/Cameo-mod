@@ -528,8 +528,8 @@ Player:
 	GrantConditionOnPrerequisite@RangerUpg:
 		Condition: ranger_upg
 		Prerequisites: wc2_h_rangerupg
-	Health@RangerUpg:
-		Modifier: 120
+	DamageMultiplier@RangerUpg:
+		Modifier: 90
 		RequiresCondition: ranger_upg
 
 ^wc2_h_ranger_longbow:
@@ -659,8 +659,8 @@ Player:
 	GrantConditionOnPrerequisite@BerserkerUpg:
 		Condition: berserker_upg
 		Prerequisites: wc2_o_berserker
-	Health@BerserkerUpg:
-		Modifier: 120
+	DamageMultiplier@BerserkerUpg:
+		Modifier: 80
 		RequiresCondition: berserker_upg
 
 ^wc2_o_berserker_lighteraxes:
@@ -2026,6 +2026,7 @@ WC2_HUMAN_ELVEN_RANGER:
 	Inherits@RLongBowUpg: ^wc2_h_ranger_longbow
 	Inherits@RScoutUpg: ^wc2_h_ranger_scouting
 	Inherits@RMarksmanUpg: ^wc2_h_ranger_marksman
+	Inherits@RangerUpg: ^wc2_h_rangerupg
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -2087,7 +2088,7 @@ WC2_HUMAN_KNIGHT:
 		BuildDuration: 300
 		BuildDurationModifier: 100
 	Mobile:
-		Speed: 56
+		Speed: 80
 	Health:
 		HP: 28800
 	Armor:
@@ -2128,11 +2129,11 @@ WC2_HUMAN_PALADIN:
 		BuildPaletteOrder: 30
 		Prerequisites: ~wc2_h_paladinupg, wc2_human_church, wc2_human_stables
 		Queue: Infantry.human2, RAInfantry.human2
-		Description: Mounted holy infantry. Fast and durable.\nCan cast healing magicks.
+		Description: Mounted holy infantry. Very fast and quite durable.\nCan cast healing magicks.
 		BuildDuration: 300
 		BuildDurationModifier: 100
 	Mobile:
-		Speed: 56
+		Speed: 100
 	Health:
 		HP: 28800
 	Armor:
@@ -3462,6 +3463,7 @@ WC2_ORC_TROLL_BERSERKER:
 	Inherits@BLighterUpg: ^wc2_o_berserker_lighteraxes
 	Inherits@BScoutUpg: ^wc2_o_berserker_scouting
 	Inherits@BRegenUpg: ^wc2_o_berserker_regen
+	Inherits@BerserkerUpg: ^wc2_o_berserkerupg
 	Tooltip:
 		Name: Troll Berserker
 	Buildable:
@@ -3492,11 +3494,11 @@ WC2_ORC_OGRE:
 		BuildPaletteOrder: 30
 		Prerequisites: wc2_orc_ogre_mound, ~!wc2_o_ogremagiupg
 		Queue: Infantry.orc2, RAInfantry.orc2
-		Description: Improved melee infantry.\nStinky, dumb and dangerous!
+		Description: Improved melee infantry.\nStinky, fast, dumb and dangerous!
 		BuildDuration: 80
 		BuildDurationModifier: 100
 	Mobile:
-		Speed: 56
+		Speed: 80
 	Health:
 		HP: 14400
 	Armor:
@@ -3535,11 +3537,11 @@ WC2_ORC_OGREMAGE:
 		BuildPaletteOrder: 30
 		Prerequisites: wc2_orc_ogre_mound, wc2_orc_altar_of_storms, ~wc2_o_ogremagiupg
 		Queue: Infantry.orc2, RAInfantry.orc2
-		Description: Improved melee infantry.\nStinky, smart, and dangerous!
+		Description: Improved magickal melee infantry.\nStinky, very fast, smart, and dangerous!
 		BuildDuration: 80
 		BuildDurationModifier: 100
 	Mobile:
-		Speed: 56
+		Speed: 100
 	Health:
 		HP: 14400
 	Armor:
@@ -4019,7 +4021,7 @@ wc2_h_rangerupg:
 		BuildPaletteOrder: 2
 		Queue: lumberupg.human2, RAlumberupg.human2
 		BuildDuration: 1500
-		Description: Intense training is given to Elven Archers.\nIncreases health by 20% and unlocks upgrades for the Ranger.
+		Description: Intense training is given to Elven Archers.\nIncreases damage resistance by 10% and unlocks upgrades for the Ranger.
 		Prerequisites: ~!wc2_h_rangerupg ## when keep/castle are fixed, will require Castle
 	Valued:
 		Cost: 2500
@@ -4280,7 +4282,7 @@ wc2_o_berserkerupg:
 		BuildPaletteOrder: 2
 		Queue: lumberupg.orc2, RAlumberupg.orc2
 		BuildDuration: 1500
-		Description: Troll Axethrowers are driven into a mad frenzy.\nIncreases health by 35% and unlocks upgrades for the Berserker.
+		Description: Troll Axethrowers are driven into a mad frenzy.\nIncreases damage resistance by 20% and unlocks upgrades for the Berserker.
 		Prerequisites: ~!wc2_o_berserkerupg
 	Valued:
 		Cost: 2500
